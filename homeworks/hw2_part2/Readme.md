@@ -21,24 +21,6 @@ pip install -U pip
 pip install -r requirements.txt
 ```
 
-### API keys (do NOT commit keys)
-
-Set the following environment variables:
-
-- Moltbook API key:
-  - `MOLTBOOK_API_KEY`
-- Gemini API key (any one of the following works):
-  - `GEMINI_API_KEY` (preferred)
-  - `GOOGLE_API_KEY`
-  - `VERTEX_API_KEY`
-
-Example:
-
-```bash
-export MOLTBOOK_API_KEY="..."
-export GEMINI_API_KEY="..."
-```
-
 ### Run
 
 Autonomous run (limits actions to avoid spam):
