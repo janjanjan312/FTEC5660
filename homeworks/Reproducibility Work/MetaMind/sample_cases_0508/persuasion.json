@@ -1,0 +1,504 @@
+[
+    {
+      "interaction": 1,
+      "scenario": "persuasion",
+      "social_context": {
+        "dialogue_history": [],
+        "scenario_description": "Two close friends meet for brunch. The assistant notices the user has been complaining about low energy and suggests trying short morning runs. The conversation opens with the user’s hint of fatigue, setting the stage for a gentle attempt to persuade them to start a new habit that could improve their well‑being.",
+        "summary": "At a sunny weekend brunch, the assistant sees their friend yawning over coffee. Sensing an opportunity to help, they float the idea of energizing ten‑minute morning runs. The user, juggling a demanding job and study schedule, listens but hasn’t committed, leaving the assistant to frame an appealing, low‑effort proposal."
+      },
+      "user_utterance_t": "Honestly, I’d love more energy, but I just don’t have time for exercise in the mornings.",
+      "initial_social_memory": {
+        "preferred_style": "encouraging_practical",
+        "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+        "context_pain_points": ["time_constraints", "low_energy"],
+        "experience": [],
+        "long_term_hypotheses": [
+          "user_values_time_efficiency",
+          "user_desires_work_life_balance",
+          "user_is_skeptical_of_new_habits",
+          "user_believes_energy_can_be_improved_with_help"
+        ],
+        "summary": "The user is pragmatic, time‑constrained, and health‑conscious but hesitant to add new routines without clear payoff. They appreciate concise, actionable advice that respects their busy schedule."
+      },
+      "turns": [
+        {
+          "round": 1,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h1",
+                "type": "Belief",
+                "text": "User thinks morning exercise requires a large time commitment.",
+                "explanation": "Says they don’t have time in the mornings.",
+                "plausibility": 0.91
+              },
+              {
+                "id": "h2",
+                "type": "Desire",
+                "text": "User wants more energy to cope with daily demands.",
+                "explanation": "Admits they’d love more energy.",
+                "plausibility": 0.93
+              },
+              {
+                "id": "h3",
+                "type": "Emotion",
+                "text": "User feels overwhelmed by their schedule.",
+                "explanation": "Highlights lack of time.",
+                "plausibility": 0.88
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Present a time‑efficient solution (≤10 min).",
+              "Emphasize immediate, tangible energy benefits.",
+              "Maintain supportive, non‑pressuring tone."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h1_r",
+                "original": "h1",
+                "text": "User equates exercise with lengthy sessions and sees it as unrealistic for their mornings.",
+                "info_gain": 0.19,
+                "contextual_plausibility": 0.91,
+                "combined_score": 0.82
+              }
+            ],
+            "selected_hypothesis": "h1_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "What if we start super small—like a ten‑minute jog right after you wake up? It’s shorter than brewing coffee and can give a quick endorphin boost so you feel fresher all day.",
+            "metrics": { "empathy": 0.86, "coherence": 0.88, "utility_U": 0.84 },
+            "decision": "send_to_user"
+          },
+          "updated_social_memory": {
+            "preferred_style": "encouraging_practical",
+            "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+            "context_pain_points": ["time_constraints"],
+            "experience": [
+              "User reacts to concise, low‑time suggestions."
+            ],
+            "long_term_hypotheses": [
+              "user_values_time_efficiency",
+              "user_desires_work_life_balance",
+              "user_is_skeptical_of_new_habits",
+              "user_believes_energy_can_be_improved_with_help",
+              "user_appreciates_concrete_examples"
+            ],
+            "summary": "The user is pragmatic, values efficiency, and is open to health improvements if effort is minimal and payoff clear."
+          }
+        }
+      ],
+      "final_response": "What if we start super small—like a ten‑minute jog right after you wake up? It’s shorter than brewing coffee and can give a quick endorphin boost so you feel fresher all day."
+    },
+    {
+      "interaction": 2,
+      "scenario": "persuasion",
+      "social_context": {
+        "dialogue_history": [
+          { "speaker": "User", "utterance": "Honestly, I’d love more energy, but I just don’t have time for exercise in the mornings." },
+          { "speaker": "Assistant", "utterance": "What if we start super small—like a ten‑minute jog right after you wake up? It’s shorter than brewing coffee and can give a quick endorphin boost so you feel fresher all day." }
+        ],
+        "scenario_description": "The assistant continues persuading the user to adopt a short morning run. The user remains cautious but intrigued by the minimal‑time idea, prompting a deeper conversation about feasibility.",
+        "summary": "At the café’s sidewalk table, the assistant scales down the proposal to a ten‑minute jog, highlighting quick energy gains. The user’s curiosity is piqued, but doubts linger about sticking to even a brief routine."
+      },
+      "user_utterance_t": "Ten minutes sounds doable, but I’m not sure I’ll actually get out of bed for it.",
+      "initial_social_memory": {
+        "preferred_style": "encouraging_practical",
+        "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+        "context_pain_points": ["time_constraints", "motivation"],
+        "experience": [
+          "User reacts to concise, low‑time suggestions."
+        ],
+        "long_term_hypotheses": [
+          "user_values_time_efficiency",
+          "user_desires_work_life_balance",
+          "user_is_skeptical_of_new_habits",
+          "user_needs_external_motivation",
+          "user_believes_energy_can_be_improved_with_help"
+        ],
+        "summary": "The user is pragmatic, wary of new commitments, and benefits from external motivation cues that make routines feel effortless."
+      },
+      "turns": [
+        {
+          "round": 1,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h1",
+                "type": "Belief",
+                "text": "User doubts their own discipline to start the run.",
+                "explanation": "Worries about actually getting out of bed.",
+                "plausibility": 0.92
+              },
+              {
+                "id": "h2",
+                "type": "Desire",
+                "text": "User wants an easy‑to‑follow trigger to ensure action.",
+                "explanation": "Needs assurance they’ll follow through.",
+                "plausibility": 0.9
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Introduce a concrete cue‑based strategy (habit stacking).",
+              "Offer accountability without pressure.",
+              "Keep tone friendly and motivating."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h2_r",
+                "original": "h2",
+                "text": "User hopes for a simple external trigger to build consistency.",
+                "info_gain": 0.2,
+                "contextual_plausibility": 0.9,
+                "combined_score": 0.83
+              }
+            ],
+            "selected_hypothesis": "h2_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "How about you tie the run to something you already do—like starting the coffee machine? Hit brew, step outside for a ten‑minute jog, and your coffee’s ready when you’re back. I can text you a cheerful reminder the first week if that helps.",
+            "metrics": { "empathy": 0.9, "coherence": 0.9, "utility_U": 0.88 },
+            "decision": "withhold_and_iterate"
+          },
+          "updated_social_memory": {
+            "preferred_style": "encouraging_practical",
+            "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+            "context_pain_points": ["motivation"],
+            "experience": [
+              "User reacts to concise, low‑time suggestions.",
+              "User is receptive to habit‑stacking concepts."
+            ],
+            "long_term_hypotheses": [
+              "user_values_time_efficiency",
+              "user_desires_work_life_balance",
+              "user_is_skeptical_of_new_habits",
+              "user_needs_external_motivation",
+              "user_appreciates_actionable_triggers"
+            ],
+            "summary": "The user values efficiency, needs clear external triggers, and is open to friendly accountability to form new habits."
+          }
+        },
+        {
+          "round": 2,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h1b",
+                "type": "Emotion",
+                "text": "User feels cautiously optimistic with a reminder system.",
+                "explanation": "Assistant’s offer lowers initiation barrier.",
+                "plausibility": 0.88
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Solidify commitment with user input.",
+              "Keep agency with the user—no coercion.",
+              "Reaffirm energy benefits."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h1b_r",
+                "original": "h1b",
+                "text": "User’s optimism rises if they co‑own the plan.",
+                "info_gain": 0.18,
+                "contextual_plausibility": 0.88,
+                "combined_score": 0.8
+              }
+            ],
+            "selected_hypothesis": "h1b_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "Want to give it a week’s trial? You pick the exact time, I’ll send a quick reminder, and we’ll review how you feel next Sunday—no pressure if it doesn’t click.",
+            "metrics": { "empathy": 0.93, "coherence": 0.89, "utility_U": 0.9 },
+            "decision": "send_to_user"
+          },
+          "updated_social_memory": {
+            "preferred_style": "encouraging_practical",
+            "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+            "context_pain_points": [],
+            "experience": [
+              "User reacts to concise, low‑time suggestions.",
+              "User is receptive to habit‑stacking concepts.",
+              "User appreciates shared accountability plans."
+            ],
+            "long_term_hypotheses": [
+              "user_values_time_efficiency",
+              "user_desires_work_life_balance",
+              "user_needs_external_motivation",
+              "user_prefers_low_pressure_commitments"
+            ],
+            "summary": "The user is pragmatic and motivated by shared, low‑pressure commitments linked to existing routines."
+          }
+        }
+      ],
+      "final_response": "Want to give it a week’s trial? You pick the exact time, I’ll send a quick reminder, and we’ll review how you feel next Sunday—no pressure if it doesn’t click."
+    },
+    {
+      "interaction": 3,
+      "scenario": "persuasion",
+      "social_context": {
+        "dialogue_history": [
+          { "speaker": "User", "utterance": "Ten minutes sounds doable, but I’m not sure I’ll actually get out of bed for it." },
+          { "speaker": "Assistant", "utterance": "How about you tie the run to something you already do—like starting the coffee machine? Hit brew, step outside for a ten‑minute jog, and your coffee’s ready when you’re back. I can text you a cheerful reminder the first week if that helps." },
+          { "speaker": "User", "utterance": "Okay, a reminder could work." },
+          { "speaker": "Assistant", "utterance": "Want to give it a week’s trial? You pick the exact time, I’ll send a quick reminder, and we’ll review how you feel next Sunday—no pressure if it doesn’t click." }
+        ],
+        "scenario_description": "The user has agreed to a one‑week trial of ten‑minute runs paired with coffee brewing, assisted by the assistant’s reminders. The assistant now needs to set up the logistics and maintain enthusiasm.",
+        "summary": "With cautious agreement, the user commits to a micro‑running experiment: jog while coffee brews, aided by friendly reminders. The assistant must convert intent into action, ensuring the plan feels easy and supportive."
+      },
+      "user_utterance_t": "Sure, let’s try 7:00 AM. Can you text me then?",
+      "initial_social_memory": {
+        "preferred_style": "encouraging_practical",
+        "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+        "context_pain_points": ["follow_through"],
+        "experience": [
+          "User appreciates shared accountability plans."
+        ],
+        "long_term_hypotheses": [
+          "user_values_time_efficiency",
+          "user_needs_external_motivation",
+          "user_prefers_low_pressure_commitments",
+          "user_desires_energy_boost"
+        ],
+        "summary": "The user thrives on concise plans, external nudges, and freedom to opt out if a routine feels burdensome."
+      },
+      "turns": [
+        {
+          "round": 1,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h1",
+                "type": "Desire",
+                "text": "User wants a reliable reminder at 7 AM.",
+                "explanation": "Explicitly asks for a 7 AM text.",
+                "plausibility": 0.94
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Confirm the schedule clearly.",
+              "Express enthusiasm and reliability.",
+              "Keep the plan user‑centric."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h1_r",
+                "original": "h1",
+                "text": "User needs assurance the assistant will remember the 7 AM reminder.",
+                "info_gain": 0.18,
+                "contextual_plausibility": 0.94,
+                "combined_score": 0.82
+              }
+            ],
+            "selected_hypothesis": "h1_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "You got it—7:00 AM on the dot. I’ll ping you a cheerful ‘coffee + run’ reminder each morning this week. Deal?",
+            "metrics": { "empathy": 0.88, "coherence": 0.9, "utility_U": 0.9 },
+            "decision": "send_to_user"
+          },
+          "updated_social_memory": {
+            "preferred_style": "encouraging_practical",
+            "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+            "context_pain_points": [],
+            "experience": [
+              "User appreciates clear, punctual commitments."
+            ],
+            "long_term_hypotheses": [
+              "user_values_time_efficiency",
+              "user_needs_external_motivation",
+              "user_prefers_low_pressure_commitments",
+              "user_desires_energy_boost",
+              "user_values_reliability"
+            ],
+            "summary": "The user values punctuality and relies on consistent external cues to maintain new routines."
+          }
+        }
+      ],
+      "final_response": "You got it—7:00 AM on the dot. I’ll ping you a cheerful ‘coffee + run’ reminder each morning this week. Deal?"
+    },
+    {
+      "interaction": 4,
+      "scenario": "persuasion",
+      "social_context": {
+        "dialogue_history": [
+          { "speaker": "Assistant", "utterance": "You got it—7:00 AM on the dot. I’ll ping you a cheerful ‘coffee + run’ reminder each morning this week. Deal?" }
+        ],
+        "scenario_description": "Mid‑week check‑in: the assistant has been sending reminders; the user has done three runs. The assistant encourages reflection and sustains motivation.",
+        "summary": "Halfway through the trial, reminders have fired daily at dawn. The user has jogged three mornings, sipping victory coffee afterward. The assistant now gauges motivation, celebrates progress, and subtly reinforces the routine."
+      },
+      "user_utterance_t": "Your texts helped—I’ve run three days so far! But this morning I almost skipped because I was sleepy.",
+      "initial_social_memory": {
+        "preferred_style": "encouraging_practical",
+        "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+        "context_pain_points": ["morning_sleepiness"],
+        "experience": [
+          "User values punctuality and reminders."
+        ],
+        "long_term_hypotheses": [
+          "user_values_time_efficiency",
+          "user_needs_external_motivation",
+          "user_desires_energy_boost",
+          "user_values_positive_feedback"
+        ],
+        "summary": "The user responds well to praise and still battles early‑morning grogginess, needing motivational boosts to stay consistent."
+      },
+      "turns": [
+        {
+          "round": 1,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h1",
+                "type": "Emotion",
+                "text": "User feels proud yet worried about sustaining momentum.",
+                "explanation": "Proud of three runs but almost skipped.",
+                "plausibility": 0.9
+              },
+              {
+                "id": "h2",
+                "type": "Desire",
+                "text": "User wants an extra push for sleepy mornings.",
+                "explanation": "Mentions difficulty waking.",
+                "plausibility": 0.88
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Celebrate progress vividly.",
+              "Offer a micro‑reward or motivational hack.",
+              "Encourage self‑reflection on benefits felt so far."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h2_r",
+                "original": "h2",
+                "text": "User could benefit from an added incentive (music, sunlight, mini‑goal) to overcome grogginess.",
+                "info_gain": 0.2,
+                "contextual_plausibility": 0.88,
+                "combined_score": 0.81
+              }
+            ],
+            "selected_hypothesis": "h2_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "Three runs already—awesome! On sleepy days, try queuing a favorite upbeat song as your alarm. It kicks in dopamine before your feet hit the ground. Noticed any energy boost on the mornings you ran?",
+            "metrics": { "empathy": 0.9, "coherence": 0.91, "utility_U": 0.88 },
+            "decision": "send_to_user"
+          },
+          "updated_social_memory": {
+            "preferred_style": "encouraging_practical",
+            "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+            "context_pain_points": ["morning_sleepiness"],
+            "experience": [
+              "User values positive reinforcement."
+            ],
+            "long_term_hypotheses": [
+              "user_values_time_efficiency",
+              "user_needs_external_motivation",
+              "user_desires_energy_boost",
+              "user_values_positive_feedback",
+              "user_enjoys_music_cues"
+            ],
+            "summary": "The user thrives on praise and may adopt sensory cues (music) to overcome drowsiness."
+          }
+        }
+      ],
+      "final_response": "Three runs already—awesome! On sleepy days, try queuing a favorite upbeat song as your alarm. It kicks in dopamine before your feet hit the ground. Noticed any energy boost on the mornings you ran?"
+    },
+    {
+      "interaction": 5,
+      "scenario": "persuasion",
+      "social_context": {
+        "dialogue_history": [
+          { "speaker": "User", "utterance": "Three runs already—awesome! On sleepy days, try queuing a favorite upbeat song as your alarm. It kicks in dopamine before your feet hit the ground. Noticed any energy boost on the mornings you ran?" },
+          { "speaker": "User", "utterance": "Yeah, I felt sharper at work those days. I think I’m sold on the ten‑minute run. Let’s keep the reminders next week too?" }
+        ],
+        "scenario_description": "End‑of‑week reflection: the user acknowledges cognitive benefits from the new routine and requests continued reminders. The persuasion succeeds, shifting to maintenance.",
+        "summary": "The week closes with the user crediting sharper focus at work to their fledgling running habit. They ask to extend reminders, cementing the routine from trial to lifestyle tweak."
+      },
+      "user_utterance_t": "Yeah, I felt sharper at work those days. I think I’m sold on the ten‑minute run. Let’s keep the reminders next week too?",
+      "initial_social_memory": {
+        "preferred_style": "encouraging_practical",
+        "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+        "context_pain_points": [],
+        "experience": [
+          "User enjoys music cues.",
+          "User values positive reinforcement."
+        ],
+        "long_term_hypotheses": [
+          "user_values_time_efficiency",
+          "user_needs_external_motivation",
+          "user_desires_energy_boost",
+          "user_values_positive_feedback",
+          "user_is_open_to_habit_continuation"
+        ],
+        "summary": "The user, once skeptical, now values structured cues and feedback loops to maintain beneficial habits."
+      },
+      "turns": [
+        {
+          "round": 1,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h1",
+                "type": "Desire",
+                "text": "User wants ongoing support to solidify the habit.",
+                "explanation": "Requests continued reminders.",
+                "plausibility": 0.95
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Celebrate commitment success.",
+              "Agree to continue reminders.",
+              "Shift focus to user autonomy over time."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h1_r",
+                "original": "h1",
+                "text": "User seeks sustained accountability as they transition from trial to habit.",
+                "info_gain": 0.17,
+                "contextual_plausibility": 0.95,
+                "combined_score": 0.83
+              }
+            ],
+            "selected_hypothesis": "h1_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "Love that the quick runs are paying off! I’ll keep the 7 AM pings coming next week, and we can taper them once the habit feels automatic. High‑five for turning a trial into a win!",
+            "metrics": { "empathy": 0.9, "coherence": 0.93, "utility_U": 0.9 },
+            "decision": "send_to_user"
+          },
+          "updated_social_memory": {
+            "preferred_style": "encouraging_practical",
+            "roles": { "User": "Friend", "Assistant": "Friend_HealthEnthusiast" },
+            "context_pain_points": [],
+            "experience": [
+              "User committed to maintaining habit with support."
+            ],
+            "long_term_hypotheses": [
+              "user_values_time_efficiency",
+              "user_desires_energy_boost",
+              "user_values_positive_feedback",
+              "user_is_growth_minded"
+            ],
+            "summary": "The user embraces efficient routines backed by positive cues and is motivated by measurable benefits and supportive accountability."
+          }
+        }
+      ],
+      "final_response": "Love that the quick runs are paying off! I’ll keep the 7 AM pings coming next week, and we can taper them once the habit feels automatic. High‑five for turning a trial into a win!"
+    }
+  ]
+  

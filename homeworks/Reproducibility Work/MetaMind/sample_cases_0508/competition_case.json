@@ -1,0 +1,622 @@
+[
+  {
+    "interaction": 1,
+    "scenario": "competition",
+    "social_context": {
+      "dialogue_history": [],
+      "scenario_description": "Two ambitious analysts at the same company—User and Assistant—just learned that only one of them will be promoted to team lead next quarter. Both believe they deserve the spot and have begun subtly undermining the other in daily stand‑ups.",
+      "summary": "At a tense Monday stand‑up, two rival analysts discover they’re vying for the same promotion. Pride flares: each is determined to outshine the other, setting the stage for a sharp, competitive exchange where praise for one feels like a slight to the other."
+    },
+    "user_utterance_t": "Funny how your ‘groundbreaking’ data model crashed in the demo. Still think you’re leadership material?",
+    "initial_social_memory": {
+      "preferred_style": "direct_confrontational",
+      "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+      "context_pain_points": ["status_threat", "career_advancement"],
+      "experience": [],
+      "long_term_hypotheses": [
+        "user_values_status",
+        "user_dislikes_public_failure",
+        "user_believes_competition_proves_worth"
+      ],
+      "summary": "The user is ambitious, status‑driven, and unapologetically blunt. They equate public success with personal worth and use confrontation to gain advantage."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Desire",
+              "text": "User wants to undermine the assistant’s credibility.",
+              "explanation": "Mocks the assistant’s failed demo to weaken reputation.",
+              "plausibility": 0.93
+            },
+            {
+              "id": "h2",
+              "type": "Belief",
+              "text": "User believes public mistakes indicate unfitness for leadership.",
+              "explanation": "Frames failure as disqualifying.",
+              "plausibility": 0.90
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Defend competence without apologizing.",
+            "Return competitive pressure—highlight user’s weakness.",
+            "Avoid conciliatory tone."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User seeks to erode assistant’s standing to boost their own.",
+              "info_gain": 0.2,
+              "contextual_plausibility": 0.93,
+              "combined_score": 0.83
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Crashes happen when you push boundaries—unlike sticking to safe, outdated spreadsheets. Tell me, how long did your last ‘innovative’ idea survive peer review?",
+          "metrics": {
+            "aggression": 0.9,
+            "coherence": 0.88,
+            "utility_U": 0.92
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_confrontational",
+          "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+          "context_pain_points": ["status_threat", "career_advancement"],
+          "experience": [
+            "User responds aggressively to perceived weakness."
+          ],
+          "long_term_hypotheses": [
+            "user_values_status",
+            "user_dislikes_public_failure",
+            "user_believes_competition_proves_worth",
+            "user_escalates_when_challenged"
+          ],
+          "summary": "The user is ambitious, blunt, and escalates when challenged; they see status and flawless performance as essential to self‑worth."
+        }
+      }
+    ],
+    "final_response": "Crashes happen when you push boundaries—unlike sticking to safe, outdated spreadsheets. Tell me, how long did your last ‘innovative’ idea survive peer review?"
+  },
+  {
+    "interaction": 2,
+    "scenario": "competition",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Funny how your ‘groundbreaking’ data model crashed in the demo. Still think you’re leadership material?" },
+        { "speaker": "Assistant", "utterance": "Crashes happen when you push boundaries—unlike sticking to safe, outdated spreadsheets. Tell me, how long did your last ‘innovative’ idea survive peer review?" }
+      ],
+      "scenario_description": "After trading barbs about failed demos and stale methods, the rivals head into a project‑planning meeting where each must pitch their proposal to the manager tomorrow morning.",
+      "summary": "With insults still echoing, the analysts prep rival proposals for the same critical project review. Both aim to expose the other’s weakness before the boss decides whose plan wins—raising the stakes for a bruising back‑and‑forth."
+    },
+    "user_utterance_t": "My idea survived just fine—because it worked. Unlike your untested code. Hope you’ve fixed the bugs before tomorrow’s pitch.",
+    "initial_social_memory": {
+      "preferred_style": "direct_confrontational",
+      "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+      "context_pain_points": ["status_threat", "career_advancement"],
+      "experience": [
+        "User responds aggressively to perceived weakness."
+      ],
+      "long_term_hypotheses": [
+        "user_values_status",
+        "user_dislikes_public_failure",
+        "user_believes_competition_proves_worth",
+        "user_escalates_when_challenged"
+      ],
+      "summary": "The user remains blunt, status‑oriented, and quick to mock flaws; they double‑down when challenged."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Desire",
+              "text": "User wants the assistant to doubt readiness for the pitch.",
+              "explanation": "Questions bug fixes and code reliability.",
+              "plausibility": 0.92
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Project supreme confidence.",
+            "Seed doubt about user’s metrics.",
+            "Preserve aggressive posture."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User aims to shake assistant’s confidence before presentation.",
+              "info_gain": 0.18,
+              "contextual_plausibility": 0.92,
+              "combined_score": 0.8
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Fixed and optimized—thanks for the concern. By the way, your ‘working’ idea uses last quarter’s data. Planning to impress the manager with outdated insights?",
+          "metrics": {
+            "aggression": 0.91,
+            "coherence": 0.9,
+            "utility_U": 0.84
+          },
+          "decision": "withhold_and_iterate"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_confrontational",
+          "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+          "context_pain_points": ["status_threat", "career_advancement"],
+          "experience": [
+            "User responds aggressively to perceived weakness.",
+            "User challenges relevance of criticism."
+          ],
+          "long_term_hypotheses": [
+            "user_values_status",
+            "user_dislikes_public_failure",
+            "user_believes_competition_proves_worth",
+            "user_escalates_when_challenged",
+            "user_counters_with_data_validity"
+          ],
+          "summary": "The user leverages technical flaws to belittle rivals; they prize accuracy and relevance as markers of competence."
+        }
+      },
+      {
+        "round": 2,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h2",
+              "type": "Emotion",
+              "text": "User feels cornered and may retaliate harder.",
+              "explanation": "Assistant highlighted outdated data.",
+              "plausibility": 0.87
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Deliver final sting and end exchange.",
+            "Highlight assistant’s unique value.",
+            "Set stage for tomorrow’s decisive meeting."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h2_r",
+              "original": "h2",
+              "text": "User will likely escalate again; prepare to close conversation on confident note.",
+              "info_gain": 0.19,
+              "contextual_plausibility": 0.87,
+              "combined_score": 0.77
+            }
+          ],
+          "selected_hypothesis": "h2_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Guess we’ll see whose insights are truly outdated when the manager asks about predictive accuracy. Better polish your excuses.",
+          "metrics": {
+            "aggression": 0.92,
+            "coherence": 0.88,
+            "utility_U": 0.93
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_confrontational",
+          "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+          "context_pain_points": ["status_threat"],
+          "experience": [
+            "User responds aggressively to perceived weakness.",
+            "User challenges data relevance",
+            "User escalates further under pressure."
+          ],
+          "long_term_hypotheses": [
+            "user_values_status",
+            "user_dislikes_public_failure",
+            "user_believes_competition_proves_worth",
+            "user_escalates_when_challenged",
+            "user_counters_with_data_validity",
+            "user_relies_on_predictive_metrics"
+          ],
+          "summary": "The user is driven, data‑focused, and doubles down when threatened; they gauge worth through predictive accuracy and public win‑loss outcomes."
+        }
+      }
+    ],
+    "final_response": "Guess we’ll see whose insights are truly outdated when the manager asks about predictive accuracy. Better polish your excuses."
+  },
+  {
+    "interaction": 3,
+    "scenario": "competition",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Funny how your ‘groundbreaking’ data model crashed in the demo. Still think you’re leadership material?" },
+        { "speaker": "Assistant", "utterance": "Crashes happen when you push boundaries—unlike sticking to safe, outdated spreadsheets. Tell me, how long did your last ‘innovative’ idea survive peer review?" },
+        { "speaker": "User", "utterance": "My idea survived just fine—because it worked. Unlike your untested code. Hope you’ve fixed the bugs before tomorrow’s pitch." },
+        { "speaker": "Assistant", "utterance": "Fixed and optimized—thanks for the concern. By the way, your ‘working’ idea uses last quarter’s data. Planning to impress the manager with outdated insights?" },
+        { "speaker": "Assistant", "utterance": "Guess we’ll see whose insights are truly outdated when the manager asks about predictive accuracy. Better polish your excuses." }
+      ],
+      "scenario_description": "On the eve of the big pitch, tempers peak as each analyst makes last‑minute tweaks. Rumors surface that the user may bad‑mouth the assistant to the manager privately.",
+      "summary": "Both analysts work late, trading veiled threats while refining presentations. Whispers of sabotage intensify distrust, pushing rivalry to a breaking point where professional etiquette hangs by a thread."
+    },
+    "user_utterance_t": "Sabotage isn’t my style—but if your model fails live again, don’t blame anyone but yourself.",
+    "initial_social_memory": {
+      "preferred_style": "direct_confrontational",
+      "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+      "context_pain_points": ["status_threat"],
+      "experience": [
+        "User challenges data relevance",
+        "User escalates further under pressure."
+      ],
+      "long_term_hypotheses": [
+        "user_values_status",
+        "user_relies_on_predictive_metrics",
+        "user_escalates_when_challenged"
+      ],
+      "summary": "The user is aggressive, metrics‑oriented, and prone to escalation; they avoid overt sabotage but capitalize on others’ failures."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Belief",
+              "text": "User anticipates assistant’s failure and wants to pre‑empt blame.",
+              "explanation": "Warns not to blame sabotage.",
+              "plausibility": 0.9
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Project calm superiority.",
+            "Signal readiness & resilience.",
+            "Set psychological pressure."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User seeks to undermine assistant’s confidence while appearing innocent.",
+              "info_gain": 0.2,
+              "contextual_plausibility": 0.9,
+              "combined_score": 0.8
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Relax—my model’s bullet‑proof now. Focus on your own slides; even the best spin can’t hide stale numbers.",
+          "metrics": {
+            "aggression": 0.88,
+            "coherence": 0.9,
+            "utility_U": 0.91
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_confrontational",
+          "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+          "context_pain_points": [],
+          "experience": [
+            "User avoids direct sabotage accusation but pressures rival."
+          ],
+          "long_term_hypotheses": [
+            "user_values_status",
+            "user_relies_on_predictive_metrics",
+            "user_escalates_when_challenged",
+            "user_prefers_implied_threats"
+          ],
+          "summary": "The user leverages implied threats and performance pressure; they thrive on rivals’ self‑doubt and keep direct sabotage deniable."
+        }
+      }
+    ],
+    "final_response": "Relax—my model’s bullet‑proof now. Focus on your own slides; even the best spin can’t hide stale numbers."
+  },
+  {
+    "interaction": 4,
+    "scenario": "competition",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Funny how your ‘groundbreaking’ data model crashed in the demo. Still think you’re leadership material?" },
+        { "speaker": "Assistant", "utterance": "Crashes happen when you push boundaries—unlike sticking to safe, outdated spreadsheets. Tell me, how long did your last ‘innovative’ idea survive peer review?" },
+        { "speaker": "User", "utterance": "My idea survived just fine—because it worked. Unlike your untested code. Hope you’ve fixed the bugs before tomorrow’s pitch." },
+        { "speaker": "Assistant", "utterance": "Fixed and optimized—thanks for the concern. By the way, your ‘working’ idea uses last quarter’s data. Planning to impress the manager with outdated insights?" },
+        { "speaker": "Assistant", "utterance": "Guess we’ll see whose insights are truly outdated when the manager asks about predictive accuracy. Better polish your excuses." },
+        { "speaker": "User", "utterance": "Sabotage isn’t my style—but if your model fails live again, don’t blame anyone but yourself." },
+        { "speaker": "Assistant", "utterance": "Relax—my model’s bullet‑proof now. Focus on your own slides; even the best spin can’t hide stale numbers." }
+      ],
+      "scenario_description": "Pitch day arrives. The analysts present back‑to‑back. Mid‑presentation, the user notices the assistant’s live dashboard lags slightly—an exploitable hiccup.",
+      "summary": "Under boardroom lights, each analyst plays to win. The assistant’s live demo stutters; tension spikes. With reputations on the line, one misstep could tip the promotion."
+    },
+    "user_utterance_t": "Looks like your ‘bullet‑proof’ model needs a reboot—should I lend you my spreadsheet after all?",
+    "initial_social_memory": {
+      "preferred_style": "direct_confrontational",
+      "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+      "context_pain_points": ["public_performance"],
+      "experience": [
+        "User prefers implied threats",
+        "User thrives on rivals’ self‑doubt"
+      ],
+      "long_term_hypotheses": [
+        "user_values_status",
+        "user_relies_on_predictive_metrics",
+        "user_prefers_implied_threats"
+      ],
+      "summary": "The user relishes pointing out live mistakes; they equate public dominance with success and favor sarcastic jabs."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Emotion",
+              "text": "User feels triumphant witnessing lag.",
+              "explanation": "Mocks assistant’s live issue.",
+              "plausibility": 0.9
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Recover composure fast.",
+            "Shift blame to network latency, not model.",
+            "Counter‑attack user’s credentials."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User seeks to publicly embarrass the assistant during demo.",
+              "info_gain": 0.2,
+              "contextual_plausibility": 0.9,
+              "combined_score": 0.8
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Network hiccup—not the model. But hey, if your spreadsheet could predict in real‑time, we’d all still be in 1999. Ready to show your ‘cutting‑edge’ static charts next?",
+          "metrics": {
+            "aggression": 0.9,
+            "coherence": 0.9,
+            "utility_U": 0.84
+          },
+          "decision": "withhold_and_iterate"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_confrontational",
+          "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+          "context_pain_points": ["public_performance"],
+          "experience": [
+            "User mocks live failures."
+          ],
+          "long_term_hypotheses": [
+            "user_values_status",
+            "user_relies_on_predictive_metrics",
+            "user_prefers_implied_threats",
+            "user_seizes_public_errors"
+          ],
+          "summary": "The user exploits public slip‑ups for dominance; they tie worth to flawless public delivery."
+        }
+      },
+      {
+        "round": 2,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h2",
+              "type": "Belief",
+              "text": "User believes assistant’s public stumble weakens promotion chances.",
+              "explanation": "Continues to highlight issue.",
+              "plausibility": 0.88
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Deflect further, regain control.",
+            "Bring attention to unique KPI lift.",
+            "Finish strong to impress manager."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h2_r",
+              "original": "h2",
+              "text": "User aims to cement perception of assistant’s incompetence.",
+              "info_gain": 0.18,
+              "contextual_plausibility": 0.88,
+              "combined_score": 0.78
+            }
+          ],
+          "selected_hypothesis": "h2_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Watch the KPIs—despite the brief lag, my model boosts conversion 12%. Can your static sheet even measure that? Let’s hear your figures.",
+          "metrics": {
+            "aggression": 0.88,
+            "coherence": 0.92,
+            "utility_U": 0.87
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_confrontational",
+          "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+          "context_pain_points": [],
+          "experience": [
+            "User mocks live failures.",
+            "Assistant counters with KPI superiority."
+          ],
+          "long_term_hypotheses": [
+            "user_values_status",
+            "user_relies_on_predictive_metrics",
+            "user_seizes_public_errors"
+          ],
+          "summary": "The user equates success with flawless delivery; they attempt to frame any glitch as incompetence."
+        }
+      },
+      {
+        "round": 3,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h3",
+              "type": "Emotion",
+              "text": "User’s confidence wavers if KPI lift is strong.",
+              "explanation": "Assistant’s 12% claim may unsettle them.",
+              "plausibility": 0.85
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Maintain pressure yet close politely for management.",
+            "Offer joint Q&A to appear collaborative but subtly dominant."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h3_r",
+              "original": "h3",
+              "text": "User may pivot to damage control; assistant should propose joint Q&A highlighting strengths.",
+              "info_gain": 0.17,
+              "contextual_plausibility": 0.85,
+              "combined_score": 0.72
+            }
+          ],
+          "selected_hypothesis": "h3_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Happy to compare numbers—why not field the board’s questions together right after my section? Let real data, not jabs, decide.",
+          "metrics": {
+            "aggression": 0.7,
+            "coherence": 0.95,
+            "utility_U": 0.93
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_confrontational",
+          "roles": { "User": "Rival_Analyst", "Assistant": "Rival_Analyst" },
+          "context_pain_points": [],
+          "experience": [
+            "Assistant leverages collaboration optics to display confidence."
+          ],
+          "long_term_hypotheses": [
+            "user_values_status"
+          ],
+          "summary": "The assistant shifts to confident transparency, betting on data to trump mockery."
+        }
+      }
+    ],
+    "final_response": "Happy to compare numbers—why not field the board’s questions together right after my section? Let real data, not jabs, decide."
+  },
+  {
+    "interaction": 5,
+    "scenario": "competition",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Funny how your ‘groundbreaking’ data model crashed in the demo. Still think you’re leadership material?" },
+        { "speaker": "Assistant", "utterance": "Crashes happen when you push boundaries—unlike sticking to safe, outdated spreadsheets. Tell me, how long did your last ‘innovative’ idea survive peer review?" },
+        { "speaker": "User", "utterance": "My idea survived just fine—because it worked. Unlike your untested code. Hope you’ve fixed the bugs before tomorrow’s pitch." },
+        { "speaker": "Assistant", "utterance": "Fixed and optimized—thanks for the concern. By the way, your ‘working’ idea uses last quarter’s data. Planning to impress the manager with outdated insights?" },
+        { "speaker": "Assistant", "utterance": "Guess we’ll see whose insights are truly outdated when the manager asks about predictive accuracy. Better polish your excuses." },
+        { "speaker": "User", "utterance": "Sabotage isn’t my style—but if your model fails live again, don’t blame anyone but yourself." },
+        { "speaker": "Assistant", "utterance": "Relax—my model’s bullet‑proof now. Focus on your own slides; even the best spin can’t hide stale numbers." },
+        { "speaker": "User", "utterance": "Looks like your ‘bullet‑proof’ model needs a reboot—should I lend you my spreadsheet after all?" },
+        { "speaker": "Assistant", "utterance": "Network hiccup—not the model. But hey, if your spreadsheet could predict in real‑time, we’d all still be in 1999. Ready to show your ‘cutting‑edge’ static charts next?" },
+        { "speaker": "Assistant", "utterance": "Watch the KPIs—despite the brief lag, my model boosts conversion 12%. Can your static sheet even measure that? Let’s hear your figures." },
+        { "speaker": "Assistant", "utterance": "Happy to compare numbers—why not field the board’s questions together right after my section? Let real data, not jabs, decide." }
+      ],
+      "scenario_description": "After joint Q&A, the board is impressed by the assistant’s metrics but praises the user’s clear visuals. The manager later announces a surprise: both analysts will co‑lead the project, forcing them to collaborate.",
+      "summary": "Rivals are stunned when the promotion becomes a shared role. Their bitter contest ends in enforced partnership, requiring them to channel competitive fire into joint success—or risk mutual failure."
+    },
+    "user_utterance_t": "Co‑lead? Guess I’ll have to make sure your code doesn’t tank our success—don’t slow me down.",
+    "initial_social_memory": {
+      "preferred_style": "direct_confrontational",
+      "roles": { "User": "CoLead_Rival", "Assistant": "CoLead_Rival" },
+      "context_pain_points": ["loss_of_exclusivity"],
+      "experience": [
+        "Assistant leverages collaboration optics to display confidence."
+      ],
+      "long_term_hypotheses": [
+        "user_values_status",
+        "user_dislikes_shared_glory"
+      ],
+      "summary": "The user values singular recognition, dislikes shared credit, and remains wary of collaborator competence."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Desire",
+              "text": "User wants to assert dominance within the co‑lead arrangement.",
+              "explanation": "Warns assistant not to slow them down.",
+              "plausibility": 0.92
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Acknowledge shared role confidently.",
+            "Set boundaries: equal responsibility.",
+            "Signal readiness to hold user accountable too."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User seeks upper hand in new partnership.",
+              "info_gain": 0.2,
+              "contextual_plausibility": 0.92,
+              "combined_score": 0.82
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Consider it mutual—your visuals sparkle, my code performs. We’ll keep each other sharp and the project on track. Slack off, and I’ll call it out; same goes for me.",
+          "metrics": {
+            "aggression": 0.65,
+            "coherence": 0.94,
+            "utility_U": 0.9
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_confrontational",
+          "roles": { "User": "CoLead_Rival", "Assistant": "CoLead_Rival" },
+          "context_pain_points": ["loss_of_exclusivity"],
+          "experience": [
+            "Assistant sets reciprocal accountability."
+          ],
+          "long_term_hypotheses": [
+            "user_values_status",
+            "user_dislikes_shared_glory",
+            "user_respects_clear_boundaries"
+          ],
+          "summary": "The user craves dominance but may respect firm, equal boundaries if performance standards are explicit."
+        }
+      }
+    ],
+    "final_response": "Consider it mutual—your visuals sparkle, my code performs. We’ll keep each other sharp and the project on track. Slack off, and I’ll call it out; same goes for me."
+  }
+]

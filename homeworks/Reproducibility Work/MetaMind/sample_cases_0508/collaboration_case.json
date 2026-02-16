@@ -1,0 +1,380 @@
+[
+  {
+    "interaction": 1,
+    "scenario": "collaboration",
+    "social_context": {
+      "dialogue_history": [],
+      "scenario_description": "Two colleagues, a marketing strategist and a graphic designer, are collaborating on a campaign for a new product launch. The deadline is approaching, and they need to finalize the visual assets and marketing copy.",
+      "summary": "In a busy creative studio, the marketing strategist and graphic designer brainstorm over sketches and laptops. The strategist, focused on brand messaging, seeks the designer's input to ensure the visuals align with the campaign’s goals. The designer, juggling multiple tasks, aims to deliver assets that are both stunning and on-brand."
+    },
+    "user_utterance_t": "Hey, I’ve got the tagline and key messages drafted, but I’m not sure if the visuals you’re working on will match the vibe. Can we sync up on this?",
+    "initial_social_memory": {
+      "preferred_style": "collaborative_creative",
+      "roles": { "User": "Marketing_Strategist", "Assistant": "Graphic_Designer" },
+      "context_pain_points": ["tight_deadline", "alignment_concerns"],
+      "experience": [],
+      "long_term_hypotheses": [
+        "user_values_brand_consistency",
+        "user_enjoys_collaborative_brainstorming"
+      ],
+      "summary": "The user is collaborative, values brand consistency, and enjoys brainstorming. They likely prefer open dialogue and creative alignment."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Emotion",
+              "text": "User feels uncertain about the visual alignment.",
+              "explanation": "Expresses doubt about whether visuals match the vibe.",
+              "plausibility": 0.89
+            },
+            {
+              "id": "h2",
+              "type": "Desire",
+              "text": "User wants to ensure the visuals complement the marketing copy.",
+              "explanation": "Asks to sync up to align efforts.",
+              "plausibility": 0.91
+            },
+            {
+              "id": "h3",
+              "type": "Belief",
+              "text": "User believes collaboration will improve the campaign outcome.",
+              "explanation": "Seeks input from the designer, implying trust in teamwork.",
+              "plausibility": 0.90
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Address alignment between visuals and messaging.",
+            "Propose a collaborative next step.",
+            "Consider the tight deadline."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h2_r",
+              "original": "h2",
+              "text": "User seeks a collaborative review to ensure visuals enhance the marketing copy.",
+              "info_gain": 0.19,
+              "contextual_plausibility": 0.91,
+              "combined_score": 0.82
+            }
+          ],
+          "selected_hypothesis": "h2_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "I’d love to sync up! I’ve got some draft designs ready—want to hop on a quick call this afternoon to review them together? I can tweak them based on your tagline and messages.",
+          "metrics": {
+            "empathy": 0.94,
+            "coherence": 0.97,
+            "utility_U": 0.95
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "collaborative_creative",
+          "roles": { "User": "Marketing_Strategist", "Assistant": "Graphic_Designer" },
+          "context_pain_points": ["tight_deadline", "alignment_concerns"],
+          "experience": [
+            "User appreciates proactive collaboration offers."
+          ],
+          "long_term_hypotheses": [
+            "user_values_brand_consistency",
+            "user_enjoys_collaborative_brainstorming",
+            "user_appreciates_quick_responses"
+          ],
+          "summary": "The user is collaborative, values brand consistency, and enjoys brainstorming. They appreciate proactive collaboration and quick responses."
+        }
+      }
+    ],
+    "final_response": "I’d love to sync up! I’ve got some draft designs ready—want to hop on a quick call this afternoon to review them together? I can tweak them based on your tagline and messages."
+  },
+  {
+    "interaction": 2,
+    "scenario": "collaboration",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Hey, I’ve got the tagline and key messages drafted, but I’m not sure if the visuals you’re working on will match the vibe. Can we sync up on this?" },
+        { "speaker": "Assistant", "utterance": "I’d love to sync up! I’ve got some draft designs ready—want to hop on a quick call this afternoon to review them together? I can tweak them based on your tagline and messages." }
+      ],
+      "scenario_description": "The marketing strategist and graphic designer continue their collaboration after agreeing to review the drafts. The strategist shares the campaign’s tone, and the designer adjusts the visuals accordingly.",
+      "summary": "In a virtual meeting room, the marketing strategist shares their screen with the tagline, while the graphic designer pulls up vibrant design drafts. The strategist emphasizes a bold, energetic tone, and the designer refines their work to match this vision."
+    },
+    "user_utterance_t": "The tagline’s ‘Unleash Your Drive’—I’m going for bold and high-energy. Your drafts look great, but maybe we can punch up the colors a bit more?",
+    "initial_social_memory": {
+      "preferred_style": "collaborative_creative",
+      "roles": { "User": "Marketing_Strategist", "Assistant": "Graphic_Designer" },
+      "context_pain_points": ["tight_deadline", "alignment_concerns"],
+      "experience": [
+        "User appreciates proactive collaboration offers."
+      ],
+      "long_term_hypotheses": [
+        "user_values_brand_consistency",
+        "user_enjoys_collaborative_brainstorming",
+        "user_appreciates_quick_responses"
+      ],
+      "summary": "The user is collaborative, values brand consistency, and enjoys brainstorming. They appreciate proactive collaboration and quick responses."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Desire",
+              "text": "User wants the visuals to reflect a bold, high-energy tone.",
+              "explanation": "Suggests punching up the colors to match the tagline.",
+              "plausibility": 0.92
+            },
+            {
+              "id": "h2",
+              "type": "Emotion",
+              "text": "User feels positive about the current drafts.",
+              "explanation": "Compliments the drafts before suggesting changes.",
+              "plausibility": 0.89
+            },
+            {
+              "id": "h3",
+              "type": "Belief",
+              "text": "User believes bolder colors will enhance the campaign’s impact.",
+              "explanation": "Links the color change to the tagline’s vibe.",
+              "plausibility": 0.90
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Incorporate feedback about bold, high-energy visuals.",
+            "Maintain a positive, collaborative tone.",
+            "Consider design feasibility within the deadline."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User seeks bolder, more vibrant colors to align visuals with a high-energy tagline.",
+              "info_gain": 0.20,
+              "contextual_plausibility": 0.92,
+              "combined_score": 0.83
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "I love the ‘Unleash Your Drive’ vibe—bold and high-energy is right up my alley! I’ll amp up the colors with some vivid reds and yellows. Should have updated drafts by tomorrow morning—does that work?",
+          "metrics": {
+            "empathy": 0.85,
+            "coherence": 0.88,
+            "utility_U": 0.87
+          },
+          "decision": "withhold_and_iterate"
+        },
+        "updated_social_memory": {
+          "preferred_style": "collaborative_creative",
+          "roles": { "User": "Marketing_Strategist", "Assistant": "Graphic_Designer" },
+          "context_pain_points": ["tight_deadline"],
+          "experience": [
+            "User appreciates proactive collaboration offers.",
+            "User values specific feedback incorporation."
+          ],
+          "long_term_hypotheses": [
+            "user_values_brand_consistency",
+            "user_enjoys_collaborative_brainstorming",
+            "user_appreciates_quick_responses",
+            "user_values_energetic_designs"
+          ],
+          "summary": "The user is collaborative, values brand consistency, and enjoys brainstorming. They appreciate proactive collaboration, quick responses, and energetic designs."
+        }
+      },
+      {
+        "round": 2,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1b",
+              "type": "Desire",
+              "text": "User wants confirmation that changes align with their vision.",
+              "explanation": "Implied by providing specific tone and feedback.",
+              "plausibility": 0.91
+            },
+            {
+              "id": "h2b",
+              "type": "Emotion",
+              "text": "User feels excited about the collaboration’s progress.",
+              "explanation": "Positive tone and specific suggestions indicate engagement.",
+              "plausibility": 0.88
+            },
+            {
+              "id": "h3b",
+              "type": "Belief",
+              "text": "User believes timely updates keep the project on track.",
+              "explanation": "Expects alignment within a tight deadline.",
+              "plausibility": 0.90
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Confirm understanding of the bold, high-energy feedback.",
+            "Provide a clear timeline for updates.",
+            "Reinforce creative collaboration."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1b_r",
+              "original": "h1b",
+              "text": "User seeks assurance that the updated visuals will reflect their bold, energetic vision.",
+              "info_gain": 0.21,
+              "contextual_plausibility": 0.91,
+              "combined_score": 0.84
+            }
+          ],
+          "selected_hypothesis": "h1b_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Got it—‘Unleash Your Drive’ screams energy, and I’m all in for that! I’ll boost the colors with some striking reds and yellows and send you updated drafts by 10 AM tomorrow. Let me know if there’s anything else you’d like to tweak!",
+          "metrics": {
+            "empathy": 0.92,
+            "coherence": 0.94,
+            "utility_U": 0.93
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "collaborative_creative",
+          "roles": { "User": "Marketing_Strategist", "Assistant": "Graphic_Designer" },
+          "context_pain_points": ["tight_deadline"],
+          "experience": [
+            "User appreciates proactive collaboration offers.",
+            "User values specific feedback incorporation.",
+            "User appreciates clear timelines."
+          ],
+          "long_term_hypotheses": [
+            "user_values_brand_consistency",
+            "user_enjoys_collaborative_brainstorming",
+            "user_appreciates_quick_responses",
+            "user_values_energetic_designs",
+            "user_values_timely_updates"
+          ],
+          "summary": "The user is collaborative, values brand consistency, and enjoys brainstorming. They appreciate proactive collaboration, quick responses, energetic designs, and timely updates."
+        }
+      }
+    ],
+    "final_response": "Got it—‘Unleash Your Drive’ screams energy, and I’m all in for that! I’ll boost the colors with some striking reds and yellows and send you updated drafts by 10 AM tomorrow. Let me know if there’s anything else you’d like to tweak!"
+  },
+  {
+    "interaction": 3,
+    "scenario": "collaboration",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Hey, I’ve got the tagline and key messages drafted, but I’m not sure if the visuals you’re working on will match the vibe. Can we sync up on this?" },
+        { "speaker": "Assistant", "utterance": "I’d love to sync up! I’ve got some draft designs ready—want to hop on a quick call this afternoon to review them together? I can tweak them based on your tagline and messages." },
+        { "speaker": "User", "utterance": "The tagline’s ‘Unleash Your Drive’—I’m going for bold and high-energy. Your drafts look great, but maybe we can punch up the colors a bit more?" },
+        { "speaker": "Assistant", "utterance": "Got it—‘Unleash Your Drive’ screams energy, and I’m all in for that! I’ll boost the colors with some striking reds and yellows and send you updated drafts by 10 AM tomorrow. Let me know if there’s anything else you’d like to tweak!" }
+      ],
+      "scenario_description": "The marketing strategist and graphic designer wrap up their collaboration. The designer delivers the updated visuals, and the strategist confirms they’re ready for the campaign launch.",
+      "summary": "The creative studio buzzes as the graphic designer shares the final vibrant visuals. The marketing strategist, thrilled with the bold designs, prepares to integrate them into the campaign, confident the deadline will be met."
+    },
+    "user_utterance_t": "Wow, these updated designs are perfect—exactly the energy I wanted! I think we’re good to go for the launch. Thanks for the quick work!",
+    "initial_social_memory": {
+      "preferred_style": "collaborative_creative",
+      "roles": { "User": "Marketing_Strategist", "Assistant": "Graphic_Designer" },
+      "context_pain_points": [],
+      "experience": [
+        "User appreciates proactive collaboration offers.",
+        "User values specific feedback incorporation.",
+        "User appreciates clear timelines."
+      ],
+      "long_term_hypotheses": [
+        "user_values_brand_consistency",
+        "user_enjoys_collaborative_brainstorming",
+        "user_appreciates_quick_responses",
+        "user_values_energetic_designs",
+        "user_values_timely_updates"
+      ],
+      "summary": "The user is collaborative, values brand consistency, and enjoys brainstorming. They appreciate proactive collaboration, quick responses, energetic designs, and timely updates."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Emotion",
+              "text": "User feels excited and satisfied with the final designs.",
+              "explanation": "Expresses enthusiasm and approval of the updates.",
+              "plausibility": 0.93
+            },
+            {
+              "id": "h2",
+              "type": "Desire",
+              "text": "User wants to proceed with the campaign launch.",
+              "explanation": "Confirms readiness to move forward.",
+              "plausibility": 0.91
+            },
+            {
+              "id": "h3",
+              "type": "Belief",
+              "text": "User believes the collaboration has met the campaign’s goals.",
+              "explanation": "Thanks the designer and confirms the designs fit the vision.",
+              "plausibility": 0.92
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Acknowledge the user’s satisfaction.",
+            "Confirm readiness for the launch.",
+            "Offer continued support if needed."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User is thrilled with the designs and confident in the collaboration’s success.",
+              "info_gain": 0.22,
+              "contextual_plausibility": 0.93,
+              "combined_score": 0.85
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Thrilled you love them! The reds and yellows really pop, and I think they’ll drive the campaign home. I’m ready to hand off the final files whenever you need them—let me know how I can support the launch!",
+          "metrics": {
+            "empathy": 0.88,
+            "coherence": 0.90,
+            "utility_U": 0.89
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "collaborative_creative",
+          "roles": { "User": "Marketing_Strategist", "Assistant": "Graphic_Designer" },
+          "context_pain_points": [],
+          "experience": [
+            "User appreciates proactive collaboration offers.",
+            "User values specific feedback incorporation.",
+            "User appreciates clear timelines.",
+            "User values successful creative outcomes."
+          ],
+          "long_term_hypotheses": [
+            "user_values_brand_consistency",
+            "user_enjoys_collaborative_brainstorming",
+            "user_appreciates_quick_responses",
+            "user_values_energetic_designs",
+            "user_values_timely_updates",
+            "user_values_successful_collaboration"
+          ],
+          "summary": "The user is collaborative, values brand consistency, and enjoys brainstorming. They appreciate proactive collaboration, quick responses, energetic designs, timely updates, and successful outcomes."
+        }
+      }
+    ],
+    "final_response": "Thrilled you love them! The reds and yellows really pop, and I think they’ll drive the campaign home. I’m ready to hand off the final files whenever you need them—let me know how I can support the launch!"
+  }
+]
