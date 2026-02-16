@@ -27,7 +27,8 @@ LLM_CONFIG = {
 
 # ToM Agent settings
 TOM_AGENT_CONFIG = {
-    "hypothesis_count": int(os.getenv("TOM_HYPOTHESIS_COUNT") or 7),
+    # Homework modification: change default hypothesis count (still overrideable via env var)
+    "hypothesis_count": int(os.getenv("TOM_HYPOTHESIS_COUNT") or 3),
     "target_diversity": 0.4,  
     "evidence_threshold": "medium-high"  
 }

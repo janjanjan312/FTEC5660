@@ -1,3 +1,69 @@
+## MetaMind — Reproducibility Work (FTEC5660)
+
+### Homework README 
+
+This section is **written for the homework submission**. It prioritizes: **install → configure → evaluate → modify**.
+
+### What to run (TL;DR)
+
+```bash
+cd "homeworks/Reproducibility Work/MetaMind"
+
+# 1) Create venv (Python 3.12 recommended)
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 2) Install deps
+pip install -r requirements.txt
+
+# 3) Configure DeepSeek (Ark) (DO NOT COMMIT .env)
+cp .env.example .env
+# Edit .env and set ARK_API_KEY / ARK_BASE_URL / ARK_MODEL_NAME
+
+# 4) Unzip evaluation data (creates evaluations/evaluations/tombench/*.jsonl)
+unzip -o evaluations.zip -d evaluations
+
+# 5) Run ToMBench (Accuracy) on a scoped subset
+python evaluations/tombench/eval_tombench.py --task "Ambiguous Story Task" --max_examples 30 --checkpoints "10,20,30"
+```
+
+### Reproduction target (suggested)
+
+- **Benchmark**: ToMBench
+- **Metric**: Accuracy
+- **Task**: `Ambiguous Story Task`
+- **Subset**: first 30 examples (with interim checkpoints at 10/20/30)
+
+### Controlled setup change (model swap)
+
+To make the pipeline runnable with accessible credentials, this reproduction uses **DeepSeek via Volcengine Ark** (OpenAI-compatible endpoint) instead of the original OpenAI defaults.  
+Because the underlying model differs, paper headline numbers (e.g., GPT-4 ToMBench average) are **not directly comparable** to these measurements.
+
+### Planned modification (single parameter)
+
+- **Parameter**: `TOM_AGENT_CONFIG["hypothesis_count"]`
+- **How to change**: set `TOM_HYPOTHESIS_COUNT` in `.env` or export it in your shell
+- **Current default (after modification)**: `3` (can be overridden by `TOM_HYPOTHESIS_COUNT`)
+
+Example:
+
+```bash
+TOM_HYPOTHESIS_COUNT=3 python evaluations/tombench/eval_tombench.py --task "Ambiguous Story Task" --max_examples 30 --checkpoints "10,20,30"
+TOM_HYPOTHESIS_COUNT=7 python evaluations/tombench/eval_tombench.py --task "Ambiguous Story Task" --max_examples 30 --checkpoints "10,20,30"
+```
+
+### Notes for graders
+
+- **No secrets committed**: `.env` is local; only `.env.example` is in the repo.
+- **Dataset included**: `evaluations.zip` must be unzipped before evaluation.
+
+---
+
+<details>
+<summary>Original upstream README (verbatim, folded)</summary>
+
+The content below is copied from the upstream MetaMind project README (with no homework-specific edits), and is provided for reference.
+
 ![metamind 001](https://github.com/user-attachments/assets/70755d93-bf0f-4a1f-b852-0568b66f8939)
 <p align="center">
   <a href="http://arxiv.org/abs/2505.18943">
@@ -117,6 +183,31 @@ This homework reproduction uses **DeepSeek via Volcengine Ark** (OpenAI-compatib
 - **Endpoint style**: the LLM wrapper prefers the OpenAI **Responses API** (compatible with Ark `/responses`), and falls back to Chat Completions when needed.
 - **ToM hypothesis count**: `TOM_AGENT_CONFIG["hypothesis_count"]` is supported (also backward-compatible with `hypothesis_count_k`).
 
+#### Reproducibility quickstart (recommended)
+
+From the course repo root:
+
+```bash
+cd "homeworks/Reproducibility Work/MetaMind"
+
+# 1) Create a virtual environment (Python 3.12 recommended)
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 2) Install dependencies
+pip install -r requirements.txt
+
+# 3) Configure DeepSeek (Ark) credentials (DO NOT COMMIT .env)
+cp .env.example .env
+# Edit .env and set ARK_API_KEY / ARK_BASE_URL / ARK_MODEL_NAME
+
+# 4) Unzip evaluation data (creates evaluations/evaluations/tombench/*.jsonl)
+unzip -o evaluations.zip -d evaluations
+
+# 5) Run a scoped ToMBench evaluation (Accuracy)
+python evaluations/tombench/eval_tombench.py --task "Ambiguous Story Task" --max_examples 30 --checkpoints "10,20,30"
+```
+
 ### 1. Clone the Repository
 
 First, clone the MetaMind repository to your local system using Git:
@@ -206,6 +297,12 @@ This repo includes an evaluation script for **ToMBench Accuracy**:
 python evaluations/tombench/eval_tombench.py
 ```
 
+Example (scoped subset + interim checkpoints):
+
+```bash
+python evaluations/tombench/eval_tombench.py --task "Ambiguous Story Task" --max_examples 30 --checkpoints "10,20,30"
+```
+
 ### 4. Running the Web Version
 
 To run the web-based interface for MetaMind, execute the `app.py` script:
@@ -228,3 +325,5 @@ We now have a paper you can cite:
   year={2025}
 }
 ```
+
+</details>

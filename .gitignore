@@ -1,0 +1,17 @@
+.DS_Store
+**/.DS_Store
+
+# Python
+**/__pycache__/
+**/*.pyc
+**/.venv/
+
+# Local env files (never commit secrets)
+**/.env
+
+# Mac unzip metadata
+**/__MACOSX/
+
+# Evaluation unzip output (keep evaluations.zip tracked; ignore extracted payload)
+homeworks/Reproducibility Work/MetaMind/evaluations/evaluations/
+
