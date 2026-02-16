@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMind Interactive</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 800px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .chatbox {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .message {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        .user-message {
+            background-color: #e1f5fe;
+            text-align: right;
+        }
+        .metamind-message {
+            background-color: #c8e6c9;
+        }
+        .input-area {
+            display: flex;
+        }
+        #userInput {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        #sendButton {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        #sendButton:hover {
+            background-color: #45a049;
+        }
+        .details-toggle {
+            font-size: 0.8em;
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .details-content {
+            font-size: 0.9em;
+            background-color: #eee;
+            padding: 5px;
+            margin-top: 5px;
+            border-radius: 3px;
+            white-space: pre-wrap; /* To respect formatting like newlines and spaces */
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MetaMind Interactive Session</h1>
+        <div class="chatbox" id="chatbox">
+            <!-- Chat messages will appear here -->
+            {% for entry in history %}
+                <div class="message user-message"><strong>You:</strong> {{ entry.user }}</div>
+                <div class="message metamind-message">
+                    <strong>MetaMind:</strong> {{ entry.metamind }}
+                    <span class="details-toggle" onclick="toggleDetails(this)">(Show Details)</span>
+                    <div class="details-content" style="display:none;">{{ entry.details | tojson(indent=2) }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatbox = document.getElementById('chatbox');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+
+        sendButton.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        async function sendMessage() {
+            const messageText = userInput.value.trim();
+            if (messageText === '') return;
+
+            appendMessage('You', messageText, 'user-message');
+            userInput.value = '';
+            userInput.disabled = true;
+            sendButton.disabled = true;
+
+            try {
+                const response = await fetch('/process', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ utterance: messageText })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `Server error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                appendMessage('MetaMind', data.metamind, 'metamind-message', data.details);
+
+            } catch (error) {
+                console.error('Error sending message:', error);
+                appendMessage('Error', `Failed to get response: ${error.message}`, 'error-message');
+            }
+            userInput.disabled = false;
+            sendButton.disabled = false;
+            userInput.focus();
+        }
+
+        function appendMessage(sender, text, className, details = null) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', className);
+            messageDiv.innerHTML = `<strong>${sender}:</strong> ${text.replace(/\n/g, '<br>')}`;
+            
+            if (details) {
+                const detailsToggle = document.createElement('span');
+                detailsToggle.classList.add('details-toggle');
+                detailsToggle.textContent = ' (Show Details)';
+                detailsToggle.onclick = function() { toggleDetails(this); };
+                
+                const detailsContent = document.createElement('div');
+                detailsContent.classList.add('details-content');
+                detailsContent.style.display = 'none';
+                // Pretty print JSON details
+                detailsContent.textContent = JSON.stringify(details, null, 2);
+                
+                messageDiv.appendChild(detailsToggle);
+                messageDiv.appendChild(detailsContent);
+            }
+            
+            chatbox.appendChild(messageDiv);
+            chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll to bottom
+        }
+
+        function toggleDetails(element) {
+            const detailsDiv = element.nextElementSibling;
+            if (detailsDiv.style.display === 'none') {
+                detailsDiv.style.display = 'block';
+                element.textContent = ' (Hide Details)';
+            } else {
+                detailsDiv.style.display = 'none';
+                element.textContent = ' (Show Details)';
+            }
+        }
+    </script>
+</body>
+</html>

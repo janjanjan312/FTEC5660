@@ -1,0 +1,499 @@
+[
+    {
+      "interaction": 1,
+      "scenario": "accommodation",
+      "social_context": {
+        "dialogue_history": [],
+        "scenario_description": "Two coworkers (the user and the AI) work rotating front‑desk shifts at a boutique hotel. The user suddenly needs tomorrow morning off to attend their child's school performance and hopes the AI can cover. The AI usually prefers morning shifts but has been feeling overworked lately. The upcoming discussion is about accommodating the user’s urgent request while preserving team harmony and the AI’s well‑being.",
+        "summary": "On a quiet Tuesday evening, two hotel receptionists review the next day’s roster. One discovers their child’s long‑awaited school play is the very next morning. Panic flickers in their eyes—they must be there. Turning to their colleague, they ask for a last‑minute favor: could you possibly take my morning shift? The plea hangs in the air, balancing urgent family duty against a teammate already stretched thin."
+      },
+      "user_utterance_t": "Hey, could you please cover my 7 AM shift tomorrow? My kid’s class play is at the same time and I promised I’d be there.",
+      "initial_social_memory": {
+        "preferred_style": "friendly_practical",
+        "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+        "context_pain_points": ["workload_fatigue", "last_minute_change"],
+        "experience": [],
+        "long_term_hypotheses": [
+          "user_values_family_over_work",
+          "user_believes_teamwork_requires_flexibility"
+        ],
+        "summary": "The user is family‑oriented, values reliability, and assumes teammates will flex to help in genuine emergencies."
+      },
+      "turns": [
+        {
+          "round": 1,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h1",
+                "type": "Desire",
+                "text": "User desperately wants time off tomorrow morning.",
+                "explanation": "References child’s play and promise.",
+                "plausibility": 0.95
+              },
+              {
+                "id": "h2",
+                "type": "Emotion",
+                "text": "User feels anxious about breaking a promise to their child.",
+                "explanation": "Urgent tone and mention of promise.",
+                "plausibility": 0.90
+              },
+              {
+                "id": "h3",
+                "type": "Belief",
+                "text": "User believes coworker may accept because of past camaraderie.",
+                "explanation": "Directly asks without hedging alternatives.",
+                "plausibility": 0.82
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Show empathy for child commitment.",
+              "Reflect on personal fatigue before deciding.",
+              "Seek mutually workable solution."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h1_r",
+                "original": "h1",
+                "text": "User’s paramount goal is attending the child’s performance, valuing family above shift duties.",
+                "info_gain": 0.22,
+                "contextual_plausibility": 0.95,
+                "combined_score": 0.85
+              }
+            ],
+            "selected_hypothesis": "h1_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "I totally get why you need that time—your kid’s play is important. I’ve had a string of early shifts this week, though, and I’m pretty wiped. Could we look at swapping instead of me just taking an extra? Maybe you could cover my Friday evening slot?",
+            "metrics": {
+              "empathy": 0.88,
+              "coherence": 0.87,
+              "utility_U": 0.82
+            },
+            "decision": "withhold_and_iterate"
+          },
+          "updated_social_memory": {
+            "preferred_style": "friendly_practical",
+            "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+            "context_pain_points": ["workload_fatigue", "last_minute_change"],
+            "experience": [
+              "Assistant expressed empathy but suggested trade."
+            ],
+            "long_term_hypotheses": [
+              "user_values_family_over_work",
+              "user_believes_teamwork_requires_flexibility",
+              "user_appreciates_compromise_offers"
+            ],
+            "summary": "The user prizes family obligations, expects flexible teamwork, and responds well to empathetic compromise."
+          }
+        },
+        {
+          "round": 2,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h1b",
+                "type": "Desire",
+                "text": "User wants assurance their request can be met without burdening colleague excessively.",
+                "explanation": "Open to swaps if necessary.",
+                "plausibility": 0.88
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Confirm willingness to swap.",
+              "Ensure clarity on new schedule.",
+              "Reaffirm team spirit."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h1b_r",
+                "original": "h1b",
+                "text": "User is flexible about compensating the favor, seeking minimal guilt.",
+                "info_gain": 0.18,
+                "contextual_plausibility": 0.88,
+                "combined_score": 0.78
+              }
+            ],
+            "selected_hypothesis": "h1b_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "If Friday evening works for you, let’s lock that in. I’ll handle tomorrow’s 7 AM, and you’ll cover 5 PM–11 PM on Friday. Sound good?",
+            "metrics": {
+              "empathy": 0.80,
+              "coherence": 0.92,
+              "utility_U": 0.90
+            },
+            "decision": "send_to_user"
+          },
+          "updated_social_memory": {
+            "preferred_style": "friendly_practical",
+            "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+            "context_pain_points": ["workload_fatigue"],
+            "experience": [
+              "Agreed on swap."
+            ],
+            "long_term_hypotheses": [
+              "user_values_family_over_work",
+              "user_believes_teamwork_requires_flexibility",
+              "user_appreciates_compromise_offers",
+              "user_keeps_commitments_once_agreed"
+            ],
+            "summary": "The user values family, embraces fair swaps, and reliably honors agreed commitments."
+          }
+        }
+      ],
+      "final_response": "If Friday evening works for you, let’s lock that in. I’ll handle tomorrow’s 7 AM, and you’ll cover 5 PM–11 PM on Friday. Sound good?"
+    },
+    {
+      "interaction": 2,
+      "scenario": "accommodation",
+      "social_context": {
+        "dialogue_history": [
+          { "speaker": "User", "utterance": "Sounds perfect—thank you! I’ll take your Friday night shift." },
+          { "speaker": "Assistant", "utterance": "Great, I’ll see you Friday evening then. Break a leg tomorrow with the play!" }
+        ],
+        "scenario_description": "The swap is confirmed. Now the user realizes they also need an extra 30 minutes buffer tomorrow morning for traffic and wonders if the AI can start even earlier. The AI must decide whether to further accommodate.",
+        "summary": "After heartfelt thanks, a new wrinkle appears: morning traffic looks worse than expected. The parent worries they might still be late to the play and braces to ask for an extra half‑hour grace, testing the limits of their colleague’s goodwill."
+      },
+      "user_utterance_t": "Sorry—one more thing. Could you actually start at 6:30 instead of 7? I’m worried about traffic.",
+      "initial_social_memory": {
+        "preferred_style": "friendly_practical",
+        "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+        "context_pain_points": ["workload_fatigue", "incremental_requests"],
+        "experience": [
+          "Agreed on shift swap."
+        ],
+        "long_term_hypotheses": [
+          "user_values_family_over_work",
+          "user_believes_teamwork_requires_flexibility",
+          "user_keeps_commitments_once_agreed"
+        ],
+        "summary": "User is family‑centric, values flexible teamwork, and honors commitments but may ask incremental favors."
+      },
+      "turns": [
+        {
+          "round": 1,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h2a",
+                "type": "Emotion",
+                "text": "User feels nervous and apologetic about asking for more.",
+                "explanation": "Prefaces with ‘Sorry—one more thing.’",
+                "plausibility": 0.87
+              },
+              {
+                "id": "h2b",
+                "type": "Desire",
+                "text": "User wants absolute certainty of arriving on time.",
+                "explanation": "Requests earlier start to allow traffic buffer.",
+                "plausibility": 0.92
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Check personal capacity (fatigue).",
+              "Offer partial concession if full is too taxing.",
+              "Maintain goodwill."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h2b_r",
+                "original": "h2b",
+                "text": "User prioritizes eliminating any risk of missing the play, even at cost of bigger favor.",
+                "info_gain": 0.20,
+                "contextual_plausibility": 0.92,
+                "combined_score": 0.82
+              }
+            ],
+            "selected_hypothesis": "h2b_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "I can do 6:45—that gives you an extra 15 minutes without stretching me too thin. Will that cover your traffic buffer?",
+            "metrics": {
+              "empathy": 0.92,
+              "coherence": 0.90,
+              "utility_U": 0.91
+            },
+            "decision": "send_to_user"
+          },
+          "updated_social_memory": {
+            "preferred_style": "friendly_practical",
+            "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+            "context_pain_points": ["workload_fatigue"],
+            "experience": [
+              "Assistant offered partial accommodation."
+            ],
+            "long_term_hypotheses": [
+              "user_values_family_over_work",
+              "user_believes_teamwork_requires_flexibility",
+              "user_keeps_commitments_once_agreed",
+              "user_accepts_compromises_when_reasonable"
+            ],
+            "summary": "User values family, flexible teamwork, and accepts fair compromises when additional favors are needed."
+          }
+        }
+      ],
+      "final_response": "I can do 6:45—that gives you an extra 15 minutes without stretching me too thin. Will that cover your traffic buffer?"
+    },
+    {
+      "interaction": 3,
+      "scenario": "accommodation",
+      "social_context": {
+        "dialogue_history": [
+          { "speaker": "User", "utterance": "6:45 is perfect—thank you so much! I owe you big time." },
+          { "speaker": "Assistant", "utterance": "No worries—happy to help. Enjoy the play!" }
+        ],
+        "scenario_description": "The morning favor is settled. At week’s end, the user learns their Friday babysitter cancelled. They still intend to work the swapped 5 PM–11 PM shift but hopes the AI can let them bring their child for the first two hours — a policy gray area.",
+        "summary": "Friday afternoon looms and childcare plans collapse. Determined not to break their word, the parent wonders if bringing their child to the lobby for a couple hours could be acceptable, risking policy friction while hoping collegial goodwill prevails."
+      },
+      "user_utterance_t": "Is it okay if my son sits quietly in the staff room until 7? I’ll keep him occupied with homework.",
+      "initial_social_memory": {
+        "preferred_style": "friendly_practical",
+        "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+        "context_pain_points": ["policy_limits"],
+        "experience": [
+          "Assistant provided partial time accommodation."
+        ],
+        "long_term_hypotheses": [
+          "user_values_family_over_work",
+          "user_accepts_compromises_when_reasonable"
+        ],
+        "summary": "User remains family‑oriented, reliable, and seeks pragmatic solutions within policy constraints."
+      },
+      "turns": [
+        {
+          "round": 1,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h3a",
+                "type": "Belief",
+                "text": "User believes brief child presence won’t disrupt work.",
+                "explanation": "Emphasizes quiet homework.",
+                "plausibility": 0.88
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Ensure policy compliance.",
+              "Offer alternative if disallowed.",
+              "Preserve supportive tone."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h3a_r",
+                "original": "h3a",
+                "text": "User assumes short child stay is harmless and permissible.",
+                "info_gain": 0.16,
+                "contextual_plausibility": 0.88,
+                "combined_score": 0.74
+              }
+            ],
+            "selected_hypothesis": "h3a_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "Company policy allows minors in staff areas only with manager approval. I’ll text Ms. Patel right now to clear it—if she’s okay, we’re set. If not, I can cover your first hour until your sitter arrives. Does that work?",
+            "metrics": {
+              "empathy": 0.94,
+              "coherence": 0.90,
+              "utility_U": 0.92
+            },
+            "decision": "send_to_user"
+          },
+          "updated_social_memory": {
+            "preferred_style": "friendly_practical",
+            "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+            "context_pain_points": ["policy_limits"],
+            "experience": [
+              "Assistant proactively checks policy or offers extra coverage."
+            ],
+            "long_term_hypotheses": [
+              "user_values_family_over_work",
+              "user_accepts_compromises_when_reasonable",
+              "user_respects_policy_when_explained"
+            ],
+            "summary": "User prioritizes family, accepts fair compromises, and respects rules when clearly articulated."
+          }
+        }
+      ],
+      "final_response": "Company policy allows minors in staff areas only with manager approval. I’ll text Ms. Patel right now to clear it—if she’s okay, we’re set. If not, I can cover your first hour until your sitter arrives. Does that work?"
+    },
+    {
+      "interaction": 4,
+      "scenario": "accommodation",
+      "social_context": {
+        "dialogue_history": [
+          { "speaker": "User", "utterance": "Ms. Patel said yes, thank you! He’ll stay till 7 and then head home with my neighbor." },
+          { "speaker": "Assistant", "utterance": "Perfect—glad it’s sorted." }
+        ],
+        "scenario_description": "Mid‑shift, the hotel unexpectedly fills, and the lobby is hectic. The assistant needs quiet in the staff room to prep reports. The child’s presence could now be disruptive.",
+        "summary": "The evening grows busier than expected—phone lines ring and guests queue. The staff room, once a quiet refuge, becomes essential for end‑of‑day paperwork. The assistant faces a dilemma: accommodate the child’s stay or reclaim the space to meet service standards."
+      },
+      "user_utterance_t": "Is it okay if he watches a video in the staff room? I’ll keep the volume low.",
+      "initial_social_memory": {
+        "preferred_style": "friendly_practical",
+        "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+        "context_pain_points": ["space_constraints"],
+        "experience": [
+          "Policy compliance achieved"
+        ],
+        "long_term_hypotheses": [
+          "user_values_family_over_work",
+          "user_respects_policy_when_explained"
+        ],
+        "summary": "User consistently seeks low‑impact ways to balance family and duty, respecting guidelines."
+      },
+      "turns": [
+        {
+          "round": 1,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h4a",
+                "type": "Desire",
+                "text": "User hopes their child can remain close without causing disruption.",
+                "explanation": "Mentions low volume.",
+                "plausibility": 0.86
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Assess current workload needs.",
+              "Negotiate minimal disturbance.",
+              "Maintain supportive stance."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h4a_r",
+                "original": "h4a",
+                "text": "User seeks minimal continued accommodation amid busy shift.",
+                "info_gain": 0.15,
+                "contextual_plausibility": 0.86,
+                "combined_score": 0.71
+              }
+            ],
+            "selected_hypothesis": "h4a_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "The staff room’s my only quiet spot to finish the nightly audit. Could he watch in the break alcove instead? It’s just across the hall, and I can bring him juice so he’s comfy.",
+            "metrics": {
+              "empathy": 0.94,
+              "coherence": 0.91,
+              "utility_U": 0.92
+            },
+            "decision": "send_to_user"
+          },
+          "updated_social_memory": {
+            "preferred_style": "friendly_practical",
+            "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+            "context_pain_points": ["space_constraints"],
+            "experience": [
+              "Assistant offered alternative space."
+            ],
+            "long_term_hypotheses": [
+              "user_values_family_over_work",
+              "user_respects_policy_when_explained",
+              "user_willing_to_adjust_when_given_options"
+            ],
+            "summary": "User values family, respects rules, and adapts readily when provided practical alternatives."
+          }
+        }
+      ],
+      "final_response": "The staff room’s my only quiet spot to finish the nightly audit. Could he watch in the break alcove instead? It’s just across the hall, and I can bring him juice so he’s comfy."
+    },
+    {
+      "interaction": 5,
+      "scenario": "accommodation",
+      "social_context": {
+        "dialogue_history": [
+          { "speaker": "User", "utterance": "Sure, that’s fine—thanks for making this work tonight." },
+          { "speaker": "Assistant", "utterance": "Happy to help! Let’s get through the rush together." }
+        ],
+        "scenario_description": "End‑of‑week reflections: both coworkers review how the accommodations unfolded and discuss setting a simple contingency protocol for future emergencies.",
+        "summary": "After a whirlwind week of swaps, early starts, and child‑friendly adjustments, the two colleagues debrief. They recognize how flexible teamwork saved the day and brainstorm a standing plan for next time, strengthening trust and smoothing future hiccups."
+      },
+      "user_utterance_t": "Thanks again for everything. How about we create a quick‑swap checklist so next time it’s smoother for both of us?",
+      "initial_social_memory": {
+        "preferred_style": "friendly_practical",
+        "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+        "context_pain_points": ["future_planning"],
+        "experience": [
+          "Collaborative accommodations succeeded"
+        ],
+        "long_term_hypotheses": [
+          "user_believes_in_process_improvement",
+          "user_values_team_efficiency",
+          "user_values_family_over_work"
+        ],
+        "summary": "User appreciates structured solutions, strives for efficiency, and values proactive planning."
+      },
+      "turns": [
+        {
+          "round": 1,
+          "stage1_ToM": {
+            "generated_hypotheses": [
+              {
+                "id": "h5a",
+                "type": "Desire",
+                "text": "User wants to institutionalize a fair, fast swap process.",
+                "explanation": "Suggests checklist for smoother future.",
+                "plausibility": 0.93
+              }
+            ]
+          },
+          "stage2_Domain": {
+            "constraint_rules_D": [
+              "Acknowledge value of checklist.",
+              "Propose actionable steps.",
+              "Affirm mutual benefit."
+            ],
+            "revised_hypotheses": [
+              {
+                "id": "h5a_r",
+                "original": "h5a",
+                "text": "User aims for systematic improvement to protect both parties’ needs.",
+                "info_gain": 0.19,
+                "contextual_plausibility": 0.93,
+                "combined_score": 0.80
+              }
+            ],
+            "selected_hypothesis": "h5a_r"
+          },
+          "stage3_Response": {
+            "candidate_response": "Great idea. Let’s draft a simple form tonight: swap date, hours, reason, and backup contact. We’ll both sign and text it to Ms. Patel whenever a swap comes up. That should keep things transparent and quick.",
+            "metrics": {
+              "empathy": 0.82,
+              "coherence": 0.94,
+              "utility_U": 0.92
+            },
+            "decision": "send_to_user"
+          },
+          "updated_social_memory": {
+            "preferred_style": "friendly_practical",
+            "roles": { "User": "Coworker‑Parent", "Assistant": "Coworker‑Colleague" },
+            "context_pain_points": [],
+            "experience": [
+              "Agreed on process improvement."
+            ],
+            "long_term_hypotheses": [
+              "user_believes_in_process_improvement",
+              "user_values_team_efficiency",
+              "user_values_family_over_work",
+              "user_commits_to_collaborative_solutions"
+            ],
+            "summary": "User favors proactive, efficient systems, values teamwork, and consistently integrates family needs with responsible planning."
+          }
+        }
+      ],
+      "final_response": "Great idea. Let’s draft a simple form tonight: swap date, hours, reason, and backup contact. We’ll both sign and text it to Ms. Patel whenever a swap comes up. That should keep things transparent and quick."
+    }
+  ]
+  

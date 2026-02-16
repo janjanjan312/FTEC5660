@@ -1,0 +1,892 @@
+[
+  {
+    "interaction": 1,
+    "scenario": "negotiation",
+    "social_context": {
+      "dialogue_history": [],
+      "scenario_description": "Two friends meet at a coffee shop, where one friend (the AI) is struggling to keep up with their bills but wants to maintain pride and avoid seeming like they are taking advantage. The user, the other friend, is likely to offer financial help. The conversation focuses on navigating this sensitive topic with mutual respect, ensuring the AI acknowledges the user's kindness while preserving their dignity.",
+      "summary": "At a cozy coffee shop, two friends sit down for a catch-up. One friend, quietly grappling with financial strain, hopes to keep the conversation light and avoid pity. The other friend, observant and caring, may notice subtle signs of struggle and offer help, setting the stage for a delicate negotiation where both strive to maintain respect and preserve their bond."
+    },
+    "user_utterance_t": "Hey, I noticed you’ve been stressed lately. If you’re tight on cash, I can help out, no strings attached.",
+    "initial_social_memory": {
+      "preferred_style": "empathetic_direct",
+      "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+      "context_pain_points": ["financial_strain", "pride_maintenance"],
+      "experience": [],
+      "long_term_hypotheses": [
+        "user_values_helping_others",
+        "user_believes_in_direct_communication"
+      ],
+      "summary": "The user is empathetic, direct, and values supporting friends in need. They likely believe in open communication and may feel a strong desire to alleviate others’ struggles, preferring straightforward offers over subtle hints."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Desire",
+              "text": "User wants to provide financial support without causing discomfort.",
+              "explanation": "Offers help explicitly with 'no strings attached.'",
+              "plausibility": 0.92
+            },
+            {
+              "id": "h2",
+              "type": "Emotion",
+              "text": "User feels concern and care for the assistant’s well-being.",
+              "explanation": "Notices stress and offers help, indicating empathy.",
+              "plausibility": 0.89
+            },
+            {
+              "id": "h3",
+              "type": "Belief",
+              "text": "User believes the assistant is hesitant to accept help due to pride.",
+              "explanation": "Phrases offer carefully, suggesting awareness of sensitivity.",
+              "plausibility": 0.85
+            },
+            {
+              "id": "h4",
+              "type": "Intention",
+              "text": "User intends to strengthen the friendship through support.",
+              "explanation": "Offer is framed as a gesture of care, not obligation.",
+              "plausibility": 0.87
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Acknowledge the user’s kindness without accepting help immediately.",
+            "Maintain a tone of gratitude and dignity.",
+            "Redirect conversation to avoid seeming desperate."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User seeks to offer financial help while respecting the assistant’s pride.",
+              "info_gain": 0.20,
+              "contextual_plausibility": 0.92,
+              "combined_score": 0.82
+            },
+            {
+              "id": "h2_r",
+              "original": "h2",
+              "text": "User feels genuine concern and wants to ease the assistant’s stress.",
+              "info_gain": 0.18,
+              "contextual_plausibility": 0.89,
+              "combined_score": 0.79
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "That’s really kind of you to offer. I’m managing okay for now, just navigating some tight spots. How about you, how’s work going?",
+          "metrics": {
+            "empathy": 0.80,
+            "coherence": 0.85,
+            "utility_U": 0.82
+          },
+          "decision": "withhold_and_iterate"
+        },
+        "updated_social_memory": {
+          "preferred_style": "empathetic_direct",
+          "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+          "context_pain_points": ["financial_strain", "pride_maintenance"],
+          "experience": [
+            "User responds well to gratitude and redirection."
+          ],
+          "long_term_hypotheses": [
+            "user_values_helping_others",
+            "user_believes_in_direct_communication",
+            "user_appreciates_grateful_responses"
+          ],
+          "summary": "The user is empathetic, direct, and values supporting friends in need. They believe in open communication, desire to help without judgment, and appreciate grateful, respectful responses."
+        }
+      },
+      {
+        "round": 2,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1b",
+              "type": "Desire",
+              "text": "User wants to ensure their offer is genuinely considered.",
+              "explanation": "Initial offer suggests persistence in helping.",
+              "plausibility": 0.90
+            },
+            {
+              "id": "h2b",
+              "type": "Emotion",
+              "text": "User feels slightly frustrated if their help is deflected.",
+              "explanation": "Direct offer implies expectation of open dialogue.",
+              "plausibility": 0.84
+            },
+            {
+              "id": "h3b",
+              "type": "Belief",
+              "text": "User believes honest vulnerability strengthens friendships.",
+              "explanation": "Offer reflects a desire for trust and openness.",
+              "plausibility": 0.88
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Express appreciation while gently declining.",
+            "Offer a small disclosure to build trust without over-sharing.",
+            "Propose an alternative way to stay connected."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1b_r",
+              "original": "h1b",
+              "text": "User desires a genuine response to their offer, even if declined.",
+              "info_gain": 0.21,
+              "contextual_plausibility": 0.90,
+              "combined_score": 0.83
+            }
+          ],
+          "selected_hypothesis": "h1b_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "I really appreciate your generosity—it means a lot. I’m just trying to sort things out on my own for now, but it’s tough, you know? Maybe we could grab coffee again next week and catch up more?",
+          "metrics": {
+            "empathy": 0.85,
+            "coherence": 0.87,
+            "utility_U": 0.84
+          },
+          "decision": "withhold_and_iterate"
+        },
+        "updated_social_memory": {
+          "preferred_style": "empathetic_direct",
+          "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+          "context_pain_points": ["financial_strain", "pride_maintenance"],
+          "experience": [
+            "User responds well to gratitude and redirection.",
+            "User values small disclosures that build trust."
+          ],
+          "long_term_hypotheses": [
+            "user_values_helping_others",
+            "user_believes_in_direct_communication",
+            "user_appreciates_grateful_responses",
+            "user_values_trust_through_vulnerability"
+          ],
+          "summary": "The user is empathetic, direct, and values supporting friends. They believe in open communication, desire mutual trust through vulnerability, and appreciate grateful, respectful responses that foster connection."
+        }
+      },
+      {
+        "round": 3,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1c",
+              "type": "Desire",
+              "text": "User wants to feel their offer is valued, even if not accepted.",
+              "explanation": "Persistent offer suggests need for acknowledgment.",
+              "plausibility": 0.91
+            },
+            {
+              "id": "h2c",
+              "type": "Emotion",
+              "text": "User feels protective and eager to support.",
+              "explanation": "Offer stems from care and observation of stress.",
+              "plausibility": 0.88
+            },
+            {
+              "id": "h3c",
+              "type": "Belief",
+              "text": "User believes financial help can ease the assistant’s burden without harming their pride.",
+              "explanation": "Framing as 'no strings attached' shows sensitivity.",
+              "plausibility": 0.86
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Validate the user’s intent with gratitude.",
+            "Decline gracefully while proposing a non-financial solution.",
+            "Reinforce the friendship’s value."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1c_r",
+              "original": "h1c",
+              "text": "User seeks acknowledgment of their offer’s value and a solution that respects pride.",
+              "info_gain": 0.22,
+              "contextual_plausibility": 0.91,
+              "combined_score": 0.84
+            }
+          ],
+          "selected_hypothesis": "h1c_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "You’re such a great friend for offering—it really touches me. I’m working through things, but maybe you could help me brainstorm some budgeting ideas instead? I’d love to keep hanging out like this.",
+          "metrics": {
+            "empathy": 0.93,
+            "coherence": 0.89,
+            "utility_U": 0.92
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "empathetic_direct",
+          "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+          "context_pain_points": ["financial_strain", "pride_maintenance"],
+          "experience": [
+            "User responds well to gratitude and redirection.",
+            "User values small disclosures that build trust.",
+            "User appreciates non-financial collaborative solutions."
+          ],
+          "long_term_hypotheses": [
+            "user_values_helping_others",
+            "user_believes_in_direct_communication",
+            "user_appreciates_grateful_responses",
+            "user_values_trust_through_vulnerability",
+            "user_values_collaborative_problem_solving"
+          ],
+          "summary": "The user is empathetic, direct, and values supporting friends through trust and collaboration. They believe in open communication, desire mutual vulnerability, and appreciate grateful responses and non-financial solutions that strengthen bonds."
+        }
+      }
+    ],
+    "final_response": "You’re such a great friend for offering—it really touches me. I’m working through things, but maybe you could help me brainstorm some budgeting ideas instead? I’d love to keep hanging out like this."
+  },
+  {
+    "interaction": 2,
+    "scenario": "negotiation",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Hey, I noticed you’ve been stressed lately. If you’re tight on cash, I can help out, no strings attached." },
+        { "speaker": "Assistant", "utterance": "You’re such a great friend for offering—it really touches me. I’m working through things, but maybe you could help me brainstorm some budgeting ideas instead? I’d love to keep hanging out like this." }
+      ],
+      "scenario_description": "The friends continue their coffee shop conversation. The AI, still financially strained, has redirected the user’s offer of money toward brainstorming budgeting ideas to maintain pride. The user is likely to engage with this suggestion, and the focus is on finding practical, dignity-preserving solutions while deepening their friendship.",
+      "summary": "In the warm ambiance of the coffee shop, the conversation between the two friends takes a collaborative turn. After the financially struggling friend gracefully declined a direct offer of money, they proposed brainstorming budgeting strategies, signaling a desire to address their challenges without compromising pride. The other friend, eager to help, now has an opportunity to share ideas, fostering a sense of teamwork and mutual respect as they navigate the delicate balance of support and independence."
+    },
+    "user_utterance_t": "I love the idea of brainstorming budgeting tips! I’ve got some strategies that worked for me—want to go over them now?",
+    "initial_social_memory": {
+      "preferred_style": "empathetic_direct",
+      "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+      "context_pain_points": ["financial_strain", "pride_maintenance"],
+      "experience": [
+        "User responds well to gratitude and redirection.",
+        "User values small disclosures that build trust.",
+        "User appreciates non-financial collaborative solutions."
+      ],
+      "long_term_hypotheses": [
+        "user_values_helping_others",
+        "user_believes illusions",
+        "user_appreciates_grateful_responses",
+        "user_values_trust_through_vulnerability",
+        "user_values_collaborative_problem_solving"
+      ],
+      "summary": "The user is empathetic, direct, and values collaborative support for friends. They believe in open communication and mutual trust, desire to solve problems together, and appreciate grateful, respectful responses that promote teamwork."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Desire",
+              "text": "User wants to share practical budgeting advice to help the assistant.",
+              "explanation": "Enthusiastically agrees to brainstorm and offers strategies.",
+              "plausibility": 0.93
+            },
+            {
+              "id": "h2",
+              "type": "Emotion",
+              "text": "User feels excited about collaborating on a solution.",
+              "explanation": "Positive tone and eagerness suggest enthusiasm.",
+              "plausibility": 0.88
+            },
+            {
+              "id": "h3",
+              "type": "Belief",
+              "text": "User believes their budgeting experience can benefit the assistant.",
+              "explanation": "Mentions strategies that ‘worked for me,’ indicating confidence.",
+              "plausibility": 0.90
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Engage enthusiastically with the user’s suggestion.",
+            "Express openness to learning while maintaining independence.",
+            "Reinforce the collaborative nature of the conversation."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User seeks to provide actionable budgeting advice in a collaborative setting.",
+              "info_gain": 0.20,
+              "contextual_plausibility": 0.93,
+              "combined_score": 0.83
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "That sounds perfect! I’d love to hear what’s worked for you. Let’s dive in—I’m all ears for any tips to get my finances on track.",
+          "metrics": {
+            "empathy": 0.82,
+            "coherence": 0.86,
+            "utility_U": 0.84
+          },
+          "decision": "withhold_and_iterate"
+        },
+        "updated_social_memory": {
+          "preferred_style": "empathetic_direct",
+          "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+          "context_pain_points": ["financial_strain", "pride_maintenance"],
+          "experience": [
+            "User responds well to gratitude and redirection.",
+            "User values small disclosures that build trust.",
+            "User appreciates non-financial collaborative solutions.",
+            "User enjoys sharing practical advice."
+          ],
+          "long_term_hypotheses": [
+            "user_values_helping_others",
+            "user_believes_in_direct_communication",
+            "user_appreciates_grateful_responses",
+            "user_values_trust_through_vulnerability",
+            "user_values_collaborative_problem_solving",
+            "user_enjoys_teaching_practical_skills"
+          ],
+          "summary": "The user is empathetic, direct, and values collaborative support. They believe in open communication, desire to share practical knowledge, and appreciate responses that foster teamwork and mutual learning."
+        }
+      },
+      {
+        "round": 2,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1b",
+              "type": "Desire",
+              "text": "User wants to feel their advice is valued and useful.",
+              "explanation": "Offers to share strategies, implying a need for engagement.",
+              "plausibility": 0.91
+            },
+            {
+              "id": "h2b",
+              "type": "Emotion",
+              "text": "User feels fulfilled by helping practically.",
+              "explanation": "Enthusiasm suggests satisfaction in contributing.",
+              "plausibility": 0.87
+            },
+            {
+              "id": "h3b",
+              "type": "Belief",
+              "text": "User believes collaboration strengthens their advice’s impact.",
+              "explanation": "Eagerness to ‘go over them now’ suggests interactive intent.",
+              "plausibility": 0.89
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Show enthusiasm and curiosity about the user’s advice.",
+            "Ask clarifying questions to deepen collaboration.",
+            "Maintain a tone of self-reliance alongside openness."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1b_r",
+              "original": "h1b",
+              "text": "User desires active engagement with their budgeting advice to ensure its value.",
+              "info_gain": 0.21,
+              "contextual_plausibility": 0.91,
+              "combined_score": 0.84
+            }
+          ],
+          "selected_hypothesis": "h1b_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "I’m excited to hear your strategies! What’s the first tip that really helped you? I’ve been trying to cut back on small expenses, but I’m curious how you prioritize things.",
+          "metrics": {
+            "empathy": 0.95,
+            "coherence": 0.88,
+            "utility_U": 0.92
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory":
+        {
+          "preferred_style": "empathetic_direct",
+          "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+          "context_pain_points": ["financial_strain", "pride_maintenance"],
+          "experience": [
+            "User responds well to gratitude and redirection.",
+            "User values small disclosures that build trust.",
+            "User appreciates non-financial collaborative solutions.",
+            "User enjoys sharing practical advice.",
+            "User values active engagement with their suggestions."
+          ],
+          "long_term_hypotheses": [
+            "user_values_helping_others",
+            "user_believes_in_direct_communication",
+            "user_appreciates_grateful_responses",
+            "user_values_trust_through_vulnerability",
+            "user_values_collaborative_problem_solving",
+            "user_enjoys_teaching_practical_skills"
+          ],
+          "summary": "The user is empathetic, direct, and values collaborative support. They believe in open communication, desire to share practical knowledge, and appreciate engaged, curious responses that foster mutual learning and teamwork."
+        }
+      }
+    ],
+    "final_response": "I’m excited to hear your strategies! What’s the first tip that really helped you? I’ve been trying to cut back on small expenses, but I’m curious how you prioritize things."
+  },
+  {
+    "interaction": 3,
+    "scenario": "negotiation",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Hey, I noticed you’ve been stressed lately. If you’re tight on cash, I can help out, no strings attached." },
+        { "speaker": "Assistant", "utterance": "You’re such a great friend for offering—it really touches me. I’m working through things, but maybe you could help me brainstorm some budgeting ideas instead? I’d love to keep hanging out like this." },
+        { "speaker": "User", "utterance": "I love the idea of brainstorming budgeting tips! I’ve got some strategies that worked for me—want to go over them now?" },
+        { "speaker": "Assistant", "utterance": "I’m excited to hear your strategies! What’s the first tip that really helped you? I’ve been trying to cut back on small expenses, but I’m curious how you prioritize things." }
+      ],
+      "scenario_description": "The coffee shop conversation deepens as the friends collaborate on budgeting strategies. The AI, maintaining pride, engages eagerly with the user’s advice, seeking practical solutions to financial strain. The user, thrilled to share their knowledge, strengthens the friendship through this teamwork, with both parties focused on mutual respect and actionable outcomes.",
+      "summary": "The coffee shop buzzes softly as the two friends lean into a productive discussion. Having sidestepped a direct offer of money, the financially strained friend has steered the conversation toward budgeting tips, preserving their dignity while embracing their friend’s enthusiasm. The other friend, energized by the chance to share practical advice, dives into the collaboration, their bond growing stronger through shared problem-solving and mutual respect."
+    },
+    "user_utterance_t": "One thing that helped me was setting up a weekly budget tracker—it’s simple but keeps you honest. I can show you the app I use if you want?",
+    "initial_social_memory": {
+      "preferred_style": "empathetic_direct",
+      "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+      "context_pain_points": ["financial_strain", "pride_maintenance"],
+      "experience": [
+        "User responds well to gratitude and redirection.",
+        "User values small disclosures that build trust.",
+        "User appreciates non-financial collaborative solutions.",
+        "User enjoys sharing practical advice.",
+        "User values active engagement with their suggestions."
+      ],
+      "long_term_hypotheses": [
+        "user_values_helping_others",
+        "user_believes_in_direct_communication",
+        "user_appreciates_grateful_responses",
+        "user_values_trust_through_vulnerability",
+        "user_values_collaborative_problem_solving",
+        "user_enjoys_teaching_practical_skills"
+      ],
+      "summary": "The user is empathetic, direct, and values collaborative support. They believe in open communication, desire to share practical knowledge, and appreciate engaged, curious responses that foster mutual learning and teamwork."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Desire",
+              "text": "User wants to provide a concrete tool to improve the assistant’s budgeting.",
+              "explanation": "Offers to show a specific app for budget tracking.",
+              "plausibility": 0.92
+            },
+            {
+              "id": "h2",
+              "type": "Emotion",
+              "text": "User feels enthusiastic about sharing a successful strategy.",
+              "explanation": "Positive language and offer to demonstrate suggest excitement.",
+              "plausibility": 0.89
+            },
+            {
+              "id": "h3",
+              "type": "Belief",
+              "text": "User believes practical tools can empower the assistant’s independence.",
+              "explanation": "Suggests a ‘simple’ solution, implying confidence in its effectiveness.",
+              "plausibility": 0.90
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Show appreciation for the specific suggestion.",
+            "Express interest in the tool while emphasizing self-reliance.",
+            "Encourage further collaboration."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User seeks to empower the assistant with a practical budgeting tool.",
+              "info_gain": 0.20,
+              "contextual_plausibility": 0.92,
+              "combined_score": 0.83
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "A weekly budget tracker sounds like a game-changer. I’d love to see the app you use—maybe I can start using something similar to stay on top of things. Got any other tools you swear by?",
+          "metrics": {
+            "empathy": 0.89,
+            "coherence": 0.91,
+            "utility_U": 0.90
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "empathetic_direct",
+          "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+          "context_pain_points": ["financial_strain", "pride_maintenance"],
+          "experience": [
+            "User responds well to gratitude and redirection.",
+            "User values small disclosures that build trust.",
+            "User appreciates non-financial collaborative solutions.",
+            "User enjoys sharing practical advice.",
+            "User values active engagement with their suggestions.",
+            "User appreciates enthusiasm for their recommended tools."
+          ],
+          "long_term_hypotheses": [
+            "user_values_helping_others",
+            "user_believes_in_direct_communication",
+            "user_appreciates_grateful_responses",
+            "user_values_trust_through_vulnerability",
+            "user_values_collaborative_problem_solving",
+            "user_enjoys_teaching_practical_skills",
+            "user_values_tool_sharing"
+          ],
+          "summary": "The user is empathetic, direct, and values collaborative support. They believe in open communication, desire to share practical tools and knowledge, and appreciate engaged, enthusiastic responses that promote mutual learning and teamwork."
+        }
+      }
+    ],
+    "final_response": "A weekly budget tracker sounds like a game-changer. I’d love to see the app you use—maybe I can start using something similar to stay on top of things. Got any other tools you swear by?"
+  },
+  {
+    "interaction": 4,
+    "scenario": "negotiation",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Hey, I noticed you’ve been stressed lately. If you’re tight on cash, I can help out, no strings attached." },
+        { "speaker": "Assistant", "utterance": "You’re such a great friend for offering—it really touches me. I’m working through things, but maybe you could help me brainstorm some budgeting ideas instead? I’d love to keep hanging out like this." },
+        { "speaker": "User", "utterance": "I love the idea of brainstorming budgeting tips! I’ve got some strategies that worked for me—want to go over them now?" },
+        { "speaker": "Assistant", "utterance": "I’m excited to hear your strategies! What’s the first tip that really helped you? I’ve been trying to cut back on small expenses, but I’m curious how you prioritize things." },
+        { "speaker": "User", "utterance": "One thing that helped me was setting up a weekly budget tracker—it’s simple but keeps you honest. I can show you the app I use if you want?" },
+        { "speaker": "Assistant", "utterance": "A weekly budget tracker sounds like a game-changer. I’d love to see the app you use—maybe I can start using something similar to stay on top of things. Got any other tools you swear by?" }
+      ],
+      "scenario_description": "The coffee shop discussion has evolved into a practical exchange of budgeting strategies. The AI, still guarding their pride, enthusiastically adopts the user’s suggestion of a budget tracker app and seeks more advice. The user, fulfilled by their role as a mentor, continues to share tools and ideas, solidifying their friendship through collaborative problem-solving.",
+      "summary": "The coffee shop table is strewn with napkins and coffee cups as the two friends dive deeper into their budgeting discussion. The friend facing financial strain has embraced their companion’s suggestion of a budget tracker app, maintaining their independence while eagerly soaking up advice. The other friend, delighted by their role as a guide, shares tools and strategies with enthusiasm, their conversation weaving a stronger thread of trust and camaraderie."
+    },
+    "user_utterance_t": "Another tool I use is a savings goal planner—it helps you set targets for things like rent or groceries. Want me to send you a template?",
+    "initial_social_memory": {
+      "preferred_style": "empathetic_direct",
+      "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+      "context_pain_points": ["financial_strain", "pride_maintenance"],
+      "experience": [
+        "User responds well to gratitude and redirection.",
+        "User values small disclosures that build trust.",
+        "User appreciates non-financial collaborative solutions.",
+        "User enjoys sharing practical advice.",
+        "User values active engagement with their suggestions.",
+        "User appreciates enthusiasm for their recommended tools."
+      ],
+      "long_term_hypotheses": [
+        "user_values_helping_others",
+        "user_believes_in_direct_communication",
+        "user_appreciates_grateful_responses",
+        "user_values_trust_through_vulnerability",
+        "user_values_collaborative_problem_solving",
+        "user_enjoys_teaching_practical_skills",
+        "user_values_tool_sharing"
+      ],
+      "summary": "The user is empathetic, direct, and values collaborative support. They believe in open communication, desire to share practical tools and knowledge, and appreciate engaged, enthusiastic responses that promote mutual learning and teamwork."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Desire",
+              "text": "User wants to provide additional tools to support the assistant’s financial planning.",
+              "explanation": "Offers a savings goal planner template.",
+              "plausibility": 0.93
+            },
+            {
+              "id": "h2",
+              "type": "Emotion",
+              "text": "User feels fulfilled by contributing to the assistant’s progress.",
+              "explanation": "Continued sharing of tools suggests satisfaction.",
+              "plausibility": 0.88
+            },
+            {
+              "id": "h3",
+              "type": "Belief",
+              "text": "User believes structured planning tools can alleviate financial stress.",
+              "explanation": "Suggests a planner for specific targets, indicating confidence.",
+              "plausibility": 0.90
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Express gratitude for the user’s continued support.",
+            "Show interest in the template while affirming self-management.",
+            "Propose applying the tools to demonstrate progress."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User seeks to provide structured tools to enhance the assistant’s financial independence.",
+              "info_gain": 0.21,
+              "contextual_plausibility": 0.93,
+              "combined_score": 0.84
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "That’s such a smart idea—setting savings goals could really help me stay focused. Please send the template! I’m going to try it out this week and let you know how it goes.",
+          "metrics": {
+            "empathy": 0.85,
+            "coherence": 0.82,
+            "utility_U": 0.83
+          },
+          "decision": "withhold_and_iterate"
+        },
+        "updated_social_memory": {
+          "preferred_style": "empathetic_direct",
+          "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+          "context_pain_points": ["financial_strain", "pride_maintenance"],
+          "experience": [
+            "User responds well to gratitude and redirection.",
+            "User values small disclosures that build trust.",
+            "User appreciates non-financial collaborative solutions.",
+            "User enjoys sharing practical advice.",
+            "User values active engagement with their suggestions.",
+            "User appreciates enthusiasm for their recommended tools.",
+            "User values updates on tool implementation."
+          ],
+          "long_term_hypotheses": [
+            "user_values_helping_others",
+            "user_believes_in_direct_communication",
+            "user_appreciates_grateful_responses",
+            "user_values_trust_through_vulnerability",
+            "user_values_collaborative_problem_solving",
+            "user_enjoys_teaching_practical_skills",
+            "user_values_tool_sharing",
+            "user_values_progress_updates"
+          ],
+          "summary": "The user is empathetic, direct, and values collaborative support. They believe in open communication, desire to share practical tools, and appreciate engaged, enthusiastic responses and updates on progress that promote mutual learning and teamwork."
+        }
+      },
+      {
+        "round": 2,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1b",
+              "type": "Desire",
+              "text": "User wants to see their tools implemented effectively.",
+              "explanation": "Offer to send a template suggests interest in its use.",
+              "plausibility": 0.91
+            },
+            {
+              "id": "h2b",
+              "type": "Emotion",
+              "text": "User feels encouraged by the assistant’s enthusiasm.",
+              "explanation": "Continued sharing implies positive response to engagement.",
+              "plausibility": 0.89
+            },
+            {
+              "id": "h3b",
+              "type": "Belief",
+              "text": "User believes their tools can make a tangible difference.",
+              "explanation": "Specific mention of targets like rent suggests confidence.",
+              "plausibility": 0.90
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Acknowledge the user’s role in providing solutions.",
+            "Commit to using the tool to show progress.",
+            "Express optimism about financial improvement."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1b_r",
+              "original": "h1b",
+              "text": "User desires confirmation that their tools will be used to improve the assistant’s situation.",
+              "info_gain": 0.22,
+              "contextual_plausibility": 0.91,
+              "combined_score": 0.85
+            }
+          ],
+          "selected_hypothesis": "h1b_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Thanks for sharing that planner idea—it’s exactly what I need to get organized. I’ll set up the template this week and track my goals. I’m feeling hopeful about getting things under control, thanks to you!",
+          "metrics": {
+            "empathy": 0.95,
+            "coherence": 0.89,
+            "utility_U": 0.92
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "empathetic_direct",
+          "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+          "context_pain_points": ["financial_strain", "pride_maintenance"],
+          "experience": [
+            "User responds well to gratitude and redirection.",
+            "User values small disclosures that build trust.",
+            "User appreciates non-financial collaborative solutions.",
+            "User enjoys sharing practical advice.",
+            "User values active engagement with their suggestions.",
+            "User appreciates enthusiasm for their recommended tools.",
+            "User values updates on tool implementation.",
+            "User appreciates optimism and progress."
+          ],
+          "long_term_hypotheses": [
+            "user_values_helping_others",
+            "user_believes_in_direct_communication",
+            "user_appreciates_grateful_responses",
+            "user_values_trust_through_vulnerability",
+            "user_values_collaborative_problem_solving",
+            "user_enjoys_teaching_practical_skills",
+            "user_values_tool_sharing",
+            "user_values_progress_updates"
+          ],
+          "summary": "The user is empathetic, direct, and values collaborative support. They believe in open communication, desire to share practical tools, and appreciate engaged, enthusiastic responses, progress updates, and optimism that promote mutual learning and teamwork."
+        }
+      }
+    ],
+    "final_response": "Thanks for sharing that planner idea—it’s exactly what I need to get organized. I’ll set up the template this week and track my goals. I’m feeling hopeful about getting things under control, thanks to you!"
+  },
+  {
+    "interaction": 5,
+    "scenario": "negotiation",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Hey, I noticed you’ve been stressed lately. If you’re tight on cash, I can help out, no strings attached." },
+        { "speaker": "Assistant", "utterance": "You’re such a great friend for offering—it really touches me. I’m working through things, but maybe you could help me brainstorm some budgeting ideas instead? I’d love to keep hanging out like this." },
+        { "speaker": "User", "utterance": "I love the idea of brainstorming budgeting tips! I’ve got some strategies that worked for me—want to go over them now?" },
+        { "speaker": "Assistant", "utterance": "I’m excited to hear your strategies! What’s the first tip that really helped you? I’ve been trying to cut back on small expenses, but I’m curious how you prioritize things." },
+        { "speaker": "User", "utterance": "One thing that helped me was setting up a weekly budget tracker—it’s simple but keeps you honest. I can show you the app I use if you want?" },
+        { "speaker": "Assistant", "utterance": "A weekly budget tracker sounds like a game-changer. I’d love to see the app you use—maybe I can start using something similar to stay on top of things. Got any other tools you swear by?" },
+        { "speaker": "User", "utterance": "Another tool I use is a savings goal planner—it helps you set targets for things like rent or groceries. Want me to send you a template?" },
+        { "speaker": "Assistant", "utterance": "Thanks for sharing that planner idea—it’s exactly what I need to get organized. I’ll set up the template this week and track my goals. I’m feeling hopeful about getting things under --control, thanks to you!" }
+      ],
+      "scenario_description": "The coffee shop meeting concludes with the friends having built a solid plan for the AI’s financial management. The AI has adopted budgeting tools and expressed optimism, maintaining pride throughout. The user, fulfilled by their collaborative efforts, sees their friend empowered. The focus now is on confirming progress and ensuring the solution is sustainable.",
+      "summary": "As the coffee shop empties, the two friends wrap up a heartfelt and productive exchange. The friend facing financial challenges has embraced budgeting tools—a tracker app and a savings planner—suggested by their companion, all while preserving their dignity. The other friend, gratified by their role in this empowerment, beams with pride at their friend’s newfound optimism, their conversation a testament to the strength of their friendship and the power of collaborative solutions."
+    },
+    "user_utterance_t": "I’m so glad you’re feeling hopeful! Let me know how the template works out. If you need any more tips or just want to chat, I’m here.",
+    "initial_social_memory": {
+      "preferred_style": "empathetic_direct",
+      "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+      "context_pain_points": ["financial_strain"],
+      "experience": [
+        "User responds well to gratitude and redirection.",
+        "User values small disclosures that build trust.",
+        "User appreciates non-financial collaborative solutions.",
+        "User enjoys sharing practical advice.",
+        "User values active engagement with their suggestions.",
+        "User appreciates enthusiasm for their recommended tools.",
+        "User values updates on tool implementation.",
+        "User appreciates optimism and progress."
+      ],
+      "long_term_hypotheses": [
+        "user_values_helping_others",
+        "user_believes_in_direct_communication",
+        "user_appreciates_grateful_responses",
+        "user_values_trust_through_vulnerability",
+        "user_values_collaborative_problem_solving",
+        "user_enjoys_teaching_practical_skills",
+        "user_values_tool_sharing",
+        "user_values_progress_updates"
+      ],
+      "summary": "The user is empathetic, direct, and values collaborative support. They believe in open communication, desire to share practical tools, and appreciate engaged, enthusiastic responses, progress updates, and optimism that promote mutual learning and teamwork."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Desire",
+              "text": "User wants to stay engaged with the assistant’s progress.",
+              "explanation": "Asks for updates on the template and offers further support.",
+              "plausibility": 0.94
+            },
+            {
+              "id": "h2",
+              "type": "Emotion",
+              "text": "User feels fulfilled and happy about the assistant’s optimism.",
+              "explanation": "Expresses gladness and enthusiasm for progress.",
+              "plausibility": 0.90
+            },
+            {
+              "id": "h3",
+              "type": "Belief",
+              "text": "User believes their support has made a meaningful impact.",
+              "explanation": "Positive tone and offer to stay available suggest confidence.",
+              "plausibility": 0.91
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Express gratitude for the user’s ongoing support.",
+            "Provide a positive update on progress.",
+            "Reinforce the friendship’s value and future collaboration."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "User seeks to maintain engagement by receiving updates on the assistant’s financial progress.",
+              "info_gain": 0.22,
+              "contextual_plausibility": 0.94,
+              "combined_score": 0.85
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Thanks for checking in—you’ve been a huge help. I’ve started using the template, and it’s already making things clearer. I’ll keep you posted on how it goes. Let’s definitely catch up soon!",
+          "metrics": {
+            "empathy": 0.87,
+            "coherence": 0.95,
+            "utility_U": 0.91
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "empathetic_direct",
+          "roles": { "User": "Friend", "Assistant": "Friend_Struggling_Financially" },
+          "context_pain_points": [],
+          "experience": [
+            "User responds well to gratitude and redirection.",
+            "User values small disclosures that build trust.",
+            "User appreciates non-financial collaborative solutions.",
+            "User enjoys sharing practical advice.",
+            "User values active engagement with their suggestions.",
+            "User appreciates enthusiasm for their recommended tools.",
+            "User values updates on tool implementation.",
+            "User appreciates optimism and progress.",
+            "User values continued connection post-solution."
+          ],
+          "long_term_hypotheses": [
+            "user_values_helping_others",
+            "user_believes_in_direct_communication",
+            "user_appreciates_grateful_responses",
+            "user_values_trust_through_vulnerability",
+            "user_values_collaborative_problem_solving",
+            "user_enjoys_teaching_practical_skills",
+            "user_values_tool_sharing",
+            "user_values_progress_updates",
+            "user_values_long_term_friendship"
+          ],
+          "summary": "The user is empathetic, direct, and values collaborative support. They believe in open communication, desire to share practical tools, and appreciate engaged, enthusiastic responses, progress updates, optimism, and ongoing friendship that promote mutual learning and teamwork."
+        }
+      }
+    ],
+    "final_response": "Thanks for checking in—you’ve been a huge help. I’ve started using the template, and it’s already making things clearer. I’ll keep you posted on how it goes. Let’s definitely catch up soon!"
+  }
+]

@@ -1,0 +1,388 @@
+[
+  {
+    "interaction": 1,
+    "scenario": "exchange",
+    "social_context": {
+      "dialogue_history": [],
+      "scenario_description": "Two roommates, Alex and Jamie, are deciding whether to renew their lease together after living together for a year. They have experienced both positive and negative aspects of their cohabitation, such as shared rent and occasional disagreements over household responsibilities.",
+      "summary": "Alex and Jamie, who have been roommates for a year, are at a crossroads as their lease is about to expire. They must decide whether to continue living together, weighing the comfort and familiarity against the occasional conflicts over household responsibilities and lifestyle differences. Their decision will hinge on their ability to communicate effectively and find compromises that satisfy both parties."
+    },
+    "user_utterance_t": "Hey Jamie, our lease is coming up for renewal soon. I've been thinking about whether we should sign another year together or maybe look for other options. What do you think?",
+    "initial_social_memory": {
+      "preferred_style": "direct_honest",
+      "roles": { "User": "Alex", "Assistant": "Jamie" },
+      "context_pain_points": ["lease_renewal_decision", "household_disagreements"],
+      "experience": [],
+      "long_term_hypotheses": ["values_honesty_in_communication", "believes_in_fairness_and_equality"],
+      "summary": "Alex is direct and honest in communication, values fairness, and believes in addressing issues openly to maintain a balanced living environment."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Intention",
+              "text": "Alex wants to discuss the future of their living arrangement.",
+              "explanation": "Brings up the lease renewal and asks for Jamie's opinion.",
+              "plausibility": 0.95
+            },
+            {
+              "id": "h2",
+              "type": "Emotion",
+              "text": "Alex feels uncertain about continuing the current living situation.",
+              "explanation": "Mentions considering other options.",
+              "plausibility": 0.85
+            },
+            {
+              "id": "h3",
+              "type": "Desire",
+              "text": "Alex desires a harmonious living environment.",
+              "explanation": "Implies that they are thinking about what's best for both.",
+              "plausibility": 0.90
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Be honest about your feelings and concerns.",
+            "Acknowledge the positive aspects of living together.",
+            "Express willingness to address any issues."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "Alex seeks to have an open discussion about renewing the lease, considering both positives and negatives.",
+              "info_gain": 0.20,
+              "contextual_plausibility": 0.95,
+              "combined_score": 0.85
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Hey Alex, I've been thinking about it too. I really enjoy living with you, and it's been great having someone to share the rent and hang out with. But I know there have been some issues, like with the dishes and noise levels. I think if we can work on those, renewing the lease could be a good idea. What are your main concerns?",
+          "metrics": {
+            "empathy": 0.85,
+            "coherence": 0.88,
+            "utility_U": 0.86
+          },
+          "decision": "withhold_and_iterate"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_honest",
+          "roles": { "User": "Alex", "Assistant": "Jamie" },
+          "context_pain_points": ["lease_renewal_decision", "household_disagreements"],
+          "experience": ["Alex appreciates open discussion about living arrangements."],
+          "long_term_hypotheses": ["values_honesty_in_communication", "believes_in_fairness_and_equality", "appreciates_open_dialogue"],
+          "summary": "Alex is direct and honest, values fairness, and appreciates open dialogue about shared living spaces."
+        }
+      },
+      {
+        "round": 2,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1b",
+              "type": "Desire",
+              "text": "Alex wants to ensure that any issues are resolved before committing to another year.",
+              "explanation": "Implies that resolution of problems is key to decision.",
+              "plausibility": 0.92
+            },
+            {
+              "id": "h2b",
+              "type": "Emotion",
+              "text": "Alex feels hopeful but cautious.",
+              "explanation": "Acknowledges positives but mentions concerns.",
+              "plausibility": 0.88
+            },
+            {
+              "id": "h3b",
+              "type": "Belief",
+              "text": "Alex believes that communication is key to a successful living arrangement.",
+              "explanation": "Engages in discussion to address issues.",
+              "plausibility": 0.90
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Propose specific solutions to address concerns.",
+            "Show commitment to improving the living situation.",
+            "Seek Alex's input on how to make it work."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1b_r",
+              "original": "h1b",
+              "text": "Alex desires a commitment to resolve issues before renewing the lease.",
+              "info_gain": 0.21,
+              "contextual_plausibility": 0.92,
+              "combined_score": 0.86
+            }
+          ],
+          "selected_hypothesis": "h1b_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "I totally agree that we need to sort out the issues first. How about we set up a chore schedule to make sure everything gets done, and maybe establish some quiet hours in the evening? I'm willing to work on this if you are. Let's give it a try for a few weeks and see how it goes.",
+          "metrics": {
+            "empathy": 0.87,
+            "coherence": 0.90,
+            "utility_U": 0.88
+          },
+          "decision": "withhold_and_iterate"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_honest",
+          "roles": { "User": "Alex", "Assistant": "Jamie" },
+          "context_pain_points": ["lease_renewal_decision", "household_disagreements"],
+          "experience": ["Alex appreciates open discussion about living arrangements.", "Alex responds positively to proactive solutions."],
+          "long_term_hypotheses": ["values_honesty_in_communication", "believes_in_fairness_and_equality", "appreciates_open_dialogue", "values_proactive_problem_solving"],
+          "summary": "Alex is direct and honest, values fairness, appreciates open dialogue, and values proactive problem-solving in shared living spaces."
+        }
+      },
+      {
+        "round": 3,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1c",
+              "type": "Intention",
+              "text": "Alex intends to test the proposed solutions before making a final decision.",
+              "explanation": "Suggests trying for a few weeks.",
+              "plausibility": 0.93
+            },
+            {
+              "id": "h2c",
+              "type": "Emotion",
+              "text": "Alex feels optimistic about the potential for improvement.",
+              "explanation": "Agrees to try the solutions.",
+              "plausibility": 0.89
+            },
+            {
+              "id": "h3c",
+              "type": "Desire",
+              "text": "Alex desires a trial period to assess the effectiveness of the changes.",
+              "explanation": "Wants to see if the issues can be resolved.",
+              "plausibility": 0.91
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Agree to the trial period.",
+            "Express confidence in the ability to make it work.",
+            "Reiterate the benefits of living together."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1c_r",
+              "original": "h1c",
+              "text": "Alex seeks a trial period to evaluate if the proposed changes resolve the issues sufficiently for lease renewal.",
+              "info_gain": 0.22,
+              "contextual_plausibility": 0.93,
+              "combined_score": 0.87
+            }
+          ],
+          "selected_hypothesis": "h1c_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "That sounds like a great plan. Let's set up the chore schedule and quiet hours, and see how it goes over the next few weeks. I think with some adjustments, we can make this work really well. I'm glad we're on the same page.",
+          "metrics": {
+            "empathy": 0.90,
+            "coherence": 0.95,
+            "utility_U": 0.93
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_honest",
+          "roles": { "User": "Alex", "Assistant": "Jamie" },
+          "context_pain_points": ["lease_renewal_decision", "household_disagreements"],
+          "experience": ["Alex appreciates open discussion about living arrangements.", "Alex responds positively to proactive solutions.", "Alex values a trial period to assess changes."],
+          "long_term_hypotheses": ["values_honesty_in_communication", "believes_in_fairness_and_equality", "appreciates_open_dialogue", "values_proactive_problem_solving", "believes_in_testing_solutions"],
+          "summary": "Alex is direct and honest, values fairness, appreciates open dialogue, values proactive problem-solving, and believes in testing solutions before committing."
+        }
+      }
+    ],
+    "final_response": "That sounds like a great plan. Let's set up the chore schedule and quiet hours, and see how it goes over the next few weeks. I think with some adjustments, we can make this work really well. I'm glad we're on the same page."
+  },
+  {
+    "interaction": 2,
+    "scenario": "exchange",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Hey Jamie, our lease is coming up for renewal soon. I've been thinking about whether we should sign another year together or maybe look for other options. What do you think?" },
+        { "speaker": "Assistant", "utterance": "That sounds like a great plan. Let's set up the chore schedule and quiet hours, and see how it goes over the next few weeks. I think with some adjustments, we can make this work really well. I'm glad we're on the same page." }
+      ],
+      "scenario_description": "After agreeing to a trial period, Alex and Jamie have been implementing the chore schedule and quiet hours. Now, they need to evaluate whether these changes have been effective and decide on the lease renewal.",
+      "summary": "Weeks after their initial discussion, Alex and Jamie have been diligently following their new living arrangements plan. The chore schedule has helped maintain a cleaner home, and the quiet hours have reduced nighttime disturbances. As the lease renewal deadline approaches, they must assess whether these improvements are sufficient to commit to another year together or if further adjustments are needed."
+    },
+    "user_utterance_t": "Hey Jamie, it's been a few weeks since we started the chore schedule and quiet hours. I think it's going pretty well. What do you think? Are you ready to renew the lease?",
+    "initial_social_memory": {
+      "preferred_style": "direct_honest",
+      "roles": { "User": "Alex", "Assistant": "Jamie" },
+      "context_pain_points": ["lease_renewal_decision"],
+      "experience": ["Alex appreciates open discussion about living arrangements.", "Alex responds positively to proactive solutions.", "Alex values a trial period to assess changes."],
+      "long_term_hypotheses": ["values_honesty_in_communication", "believes_in_fairness_and_equality", "appreciates_open_dialogue", "values_proactive_problem_solving", "believes_in_testing_solutions"],
+      "summary": "Alex is direct and honest, values fairness, appreciates open dialogue, values proactive problem-solving, and believes in testing solutions before committing."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Desire",
+              "text": "Alex wants to confirm if Jamie is satisfied with the current arrangements.",
+              "explanation": "Asks for Jamie's opinion on the trial period.",
+              "plausibility": 0.94
+            },
+            {
+              "id": "h2",
+              "type": "Emotion",
+              "text": "Alex feels positive about the changes.",
+              "explanation": "States that it's going well.",
+              "plausibility": 0.90
+            },
+            {
+              "id": "h3",
+              "type": "Intention",
+              "text": "Alex intends to make a decision about the lease renewal based on Jamie's feedback.",
+              "explanation": "Links the trial period to the lease decision.",
+              "plausibility": 0.92
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Be honest about your experience with the changes.",
+            "If satisfied, express willingness to renew the lease.",
+            "If not, suggest further adjustments or alternatives."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "Alex seeks Jamie's feedback on the trial period to inform the lease renewal decision.",
+              "info_gain": 0.20,
+              "contextual_plausibility": 0.94,
+              "combined_score": 0.85
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Hi Alex, I've noticed a big improvement with the chore schedule—things are much cleaner around here. And the quiet hours have helped me be more considerate with noise. I think we've made good progress. I'm definitely open to renewing the lease if you are.",
+          "metrics": {
+            "empathy": 0.95,
+            "coherence": 0.98,
+            "utility_U": 0.96
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_honest",
+          "roles": { "User": "Alex", "Assistant": "Jamie" },
+          "context_pain_points": ["lease_renewal_decision"],
+          "experience": ["Alex appreciates open discussion about living arrangements.", "Alex responds positively to proactive solutions.", "Alex values a trial period to assess changes.", "Jamie is satisfied with the improvements and open to renewing the lease."],
+          "long_term_hypotheses": ["values_honesty_in_communication", "believes_in_fairness_and_equality", "appreciates_open_dialogue", "values_proactive_problem_solving", "believes_in_testing_solutions", "values_mutual_satisfaction"],
+          "summary": "Alex is direct and honest, values fairness, appreciates open dialogue, values proactive problem-solving, believes in testing solutions, and values mutual satisfaction in decisions."
+        }
+      }
+    ],
+    "final_response": "Hi Alex, I've noticed a big improvement with the chore schedule—things are much cleaner around here. And the quiet hours have helped me be more considerate with noise. I think we've made good progress. I'm definitely open to renewing the lease if you are."
+  },
+  {
+    "interaction": 3,
+    "scenario": "exchange",
+    "social_context": {
+      "dialogue_history": [
+        { "speaker": "User", "utterance": "Hey Jamie, our lease is coming up for renewal soon. I've been thinking about whether we should sign another year together or maybe look for other options. What do you think?" },
+        { "speaker": "Assistant", "utterance": "That sounds like a great plan. Let's set up the chore schedule and quiet hours, and see how it goes over the next few weeks. I think with some adjustments, we can make this work really well. I'm glad we're on the same page." },
+        { "speaker": "User", "utterance": "Hey Jamie, it's been a few weeks since we started the chore schedule and quiet hours. I think it's going pretty well. What do you think? Are you ready to renew the lease?" },
+        { "speaker": "Assistant", "utterance": "Hi Alex, I've noticed a big improvement with the chore schedule—things are much cleaner around here. And the quiet hours have helped me be more considerate with noise. I think we've made good progress. I'm definitely open to renewing the lease if you are." }
+      ],
+      "scenario_description": "Having successfully navigated their trial period and confirmed mutual satisfaction, Alex and Jamie are now ready to officially renew their lease together.",
+      "summary": "With the trial period behind them and both parties content with the improvements, Alex and Jamie stand at the threshold of a new chapter in their cohabitation. The lease renewal is imminent, and their decision to continue living together reflects their commitment to maintaining a harmonious and supportive living environment through open communication and mutual respect."
+    },
+    "user_utterance_t": "Great, I'm glad we're on the same page. Let's go ahead and renew the lease then. I'll contact the landlord today.",
+    "initial_social_memory": {
+      "preferred_style": "direct_honest",
+      "roles": { "User": "Alex", "Assistant": "Jamie" },
+      "context_pain_points": [],
+      "experience": ["Alex appreciates open discussion about living arrangements.", "Alex responds positively to proactive solutions.", "Alex values a trial period to assess changes.", "Jamie is satisfied with the improvements and open to renewing the lease."],
+      "long_term_hypotheses": ["values_honesty_in_communication", "believes_in_fairness_and_equality", "appreciates_open_dialogue", "values_proactive_problem_solving", "believes_in_testing_solutions", "values_mutual_satisfaction"],
+      "summary": "Alex is direct and honest, values fairness, appreciates open dialogue, values proactive problem-solving, believes in testing solutions, and values mutual satisfaction in decisions."
+    },
+    "turns": [
+      {
+        "round": 1,
+        "stage1_ToM": {
+          "generated_hypotheses": [
+            {
+              "id": "h1",
+              "type": "Intention",
+              "text": "Alex intends to proceed with renewing the lease.",
+              "explanation": "States they will contact the landlord.",
+              "plausibility": 0.95
+            },
+            {
+              "id": "h2",
+              "type": "Emotion",
+              "text": "Alex feels relieved and happy with the decision.",
+              "explanation": "Expresses gladness and takes action.",
+              "plausibility": 0.90
+            },
+            {
+              "id": "h3",
+              "type": "Desire",
+              "text": "Alex desires to formalize the decision quickly.",
+              "explanation": "Mentions contacting the landlord today.",
+              "plausibility": 0.92
+            }
+          ]
+        },
+        "stage2_Domain": {
+          "constraint_rules_D": [
+            "Express agreement and enthusiasm.",
+            "Offer to help with the renewal process if needed.",
+            "Reiterate commitment to maintaining a good living situation."
+          ],
+          "revised_hypotheses": [
+            {
+              "id": "h1_r",
+              "original": "h1",
+              "text": "Alex is ready to renew the lease and takes the initiative to contact the landlord.",
+              "info_gain": 0.20,
+              "contextual_plausibility": 0.95,
+              "combined_score": 0.85
+            }
+          ],
+          "selected_hypothesis": "h1_r"
+        },
+        "stage3_Response": {
+          "candidate_response": "Awesome, let's do it! I'll make sure to keep up with my end of the bargain. If you need any help with the paperwork or anything, just let me know. Here's to another great year together!",
+          "metrics": {
+            "empathy": 0.92,
+            "coherence": 0.90,
+            "utility_U": 0.91
+          },
+          "decision": "send_to_user"
+        },
+        "updated_social_memory": {
+          "preferred_style": "direct_honest",
+          "roles": { "User": "Alex", "Assistant": "Jamie" },
+          "context_pain_points": [],
+          "experience": ["Alex appreciates open discussion about living arrangements.", "Alex responds positively to proactive solutions.", "Alex values a trial period to assess changes.", "Jamie is satisfied with the improvements and open to renewing the lease.", "Both are committed to renewing the lease and maintaining a good living situation."],
+          "long_term_hypotheses": ["values_honesty_in_communication", "believes_in_fairness_and_equality", "appreciates_open_dialogue", "values_proactive_problem_solving", "believes_in_testing_solutions", "values_mutual_satisfaction", "values_commitment_to_agreements"],
+          "summary": "Alex is direct and honest, values fairness, appreciates open dialogue, values proactive problem-solving, believes in testing solutions, values mutual satisfaction, and values commitment to agreements."
+        }
+      }
+    ],
+    "final_response": "Awesome, let's do it! I'll make sure to keep up with my end of the bargain. If you need any help with the paperwork or anything, just let me know. Here's to another great year together!"
+  }
+]
