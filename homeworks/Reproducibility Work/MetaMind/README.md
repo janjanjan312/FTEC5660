@@ -109,6 +109,14 @@ For more detailed experimental setups, results on (additional) benchmarks, and q
 
 Follow these steps to get MetaMind up and running on your local machine. At this point, we are developing the project website including MetaMind playground and more.
 
+### Note for reproducibility work (DeepSeek / Volcengine Ark)
+
+This homework reproduction uses **DeepSeek via Volcengine Ark** (OpenAI-compatible endpoint) instead of the original OpenAI model defaults.
+
+- **No secrets are committed**: the API key is loaded from environment variables / local `.env`.
+- **Endpoint style**: the LLM wrapper prefers the OpenAI **Responses API** (compatible with Ark `/responses`), and falls back to Chat Completions when needed.
+- **ToM hypothesis count**: `TOM_AGENT_CONFIG["hypothesis_count"]` is supported (also backward-compatible with `hypothesis_count_k`).
+
 ### 1. Clone the Repository
 
 First, clone the MetaMind repository to your local system using Git:
@@ -142,6 +150,22 @@ Before running the project, you need to configure the settings in the `config.py
 
 **Important**: You MUST replace the placeholder values in `config.py` with your actual credentials and desired settings. Specifically, pay attention to the `api_key` and `base_url` for the LLM.
 
+#### DeepSeek (Ark) setup (recommended)
+
+Create a local `.env` file (do **NOT** commit it). You can start from `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+Then fill in:
+
+- `ARK_BASE_URL` (example: `https://ark.cn-beijing.volces.com/api/v3`)
+- `ARK_MODEL_NAME` (example: `deepseek-v3-2-251201`)
+- `ARK_API_KEY` (your bearer token)
+
+After that, the code will auto-load `.env` via `python-dotenv` in `config.py`.
+
 Here's an overview of the key configurable parameters in `config.py`:
 
 | Category             | Parameter             | Description                                                                 | Default Value        |
@@ -173,6 +197,14 @@ python main.py
 ```
 
 This will typically start an interactive command-line interface where you can interact with the MetaMind agents.
+
+### 5. Run ToMBench evaluation (Accuracy)
+
+This repo includes an evaluation script for **ToMBench Accuracy**:
+
+```bash
+python evaluations/tombench/eval_tombench.py
+```
 
 ### 4. Running the Web Version
 
