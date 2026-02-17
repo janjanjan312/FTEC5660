@@ -15,3 +15,7 @@
 # Evaluation unzip output (keep evaluations.zip tracked; ignore extracted payload)
 homeworks/Reproducibility Work/MetaMind/evaluations/evaluations/
 
+
+# Local-only presentation/export helpers
+homeworks/Reproducibility Work/pandoc_header.tex
+homeworks/Reproducibility Work/presentation_script.md
