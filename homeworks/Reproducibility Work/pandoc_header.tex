@@ -1,0 +1,19 @@
+% Increase spacing between headings for better PDF readability.
+% This header avoids extra LaTeX packages (works with minimal TeX installs).
+%
+% section    -> corresponds to Markdown "##"
+% subsection -> corresponds to Markdown "###"
+% subsubsection -> corresponds to Markdown "####"
+\makeatletter
+\let\oldsection\section
+\renewcommand{\section}{\vspace{1.6em}\oldsection}
+\let\oldsubsection\subsection
+\renewcommand{\subsection}{\vspace{1.2em}\oldsubsection}
+\let\oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{\vspace{0.9em}\oldsubsubsection}
+\makeatother
+
+% Slightly increase paragraph spacing (keep it modest for reports).
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+

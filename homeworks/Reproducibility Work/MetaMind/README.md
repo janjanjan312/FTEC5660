@@ -52,6 +52,13 @@ TOM_HYPOTHESIS_COUNT=3 python evaluations/tombench/eval_tombench.py --task "Ambi
 TOM_HYPOTHESIS_COUNT=7 python evaluations/tombench/eval_tombench.py --task "Ambiguous Story Task" --max_examples 30 --checkpoints "10,20,30"
 ```
 
+### Measured results (this submission; scoped subset)
+
+On `Ambiguous Story Task` (first 30 examples), with `LLM_TEMPERATURE=0` and `LLM_MAX_TOKENS=200`, we repeated runs to estimate variability:
+
+- `hypothesis_count=7` (3 trials): 50.00%, 70.00%, 56.67% → mean **58.89%**, sample sd **10.18**
+- `hypothesis_count=3` (3 trials): 63.33%, 60.00%, 66.67% → mean **63.33%**, sample sd **3.34**
+
 ### Notes for graders
 
 - **No secrets committed**: `.env` is local; only `.env.example` is in the repo.
@@ -60,9 +67,10 @@ TOM_HYPOTHESIS_COUNT=7 python evaluations/tombench/eval_tombench.py --task "Ambi
 ---
 
 <details>
-<summary>Original upstream README (verbatim, folded)</summary>
+<summary>Upstream README (folded; lightly edited for this homework)</summary>
 
-The content below is copied from the upstream MetaMind project README (with no homework-specific edits), and is provided for reference.
+Most of the content below is copied from the upstream MetaMind project README and is provided for reference.  
+Small additions/edits were made to document this homework’s reproducibility setup (DeepSeek/Ark) and evaluation entrypoint.
 
 ![metamind 001](https://github.com/user-attachments/assets/70755d93-bf0f-4a1f-b852-0568b66f8939)
 <p align="center">
@@ -262,11 +270,11 @@ Here's an overview of the key configurable parameters in `config.py`:
 | Category             | Parameter             | Description                                                                 | Default Value        |
 |----------------------|-----------------------|-----------------------------------------------------------------------------|----------------------|
 | **LLM API Settings** | `api_key`             | Your API key for the LLM service (e.g., OpenAI).                            | `"your-openai-key"`  |
-|                      | `base_url`            | The base URL for the LLM API (if using a custom or self-hosted endpoint). | `"your-openai-url"`  |
-|                      | `model_name`          | The specific LLM model to use (e.g., "gpt-4o").                             | `"gpt-4o"`           |
+|                      | `base_url`            | The base URL for the LLM API (if using a custom or self-hosted endpoint). | `"https://ark.cn-beijing.volces.com/api/v3"`  |
+|                      | `model_name`          | The specific LLM model to use (e.g., "gpt-4o").                             | `"deepseek-v3-2-251201"`           |
 |                      | `temperature`         | Controls the randomness of the LLM's output.                                | `0.7`                |
 |                      | `max_tokens`          | The maximum number of tokens the LLM can generate in a single response.     | `1000`               |
-| **ToM Agent**        | `hypothesis_count`    | Number of mental state hypotheses to generate.                              | `7`                  |
+| **ToM Agent**        | `hypothesis_count`    | Number of mental state hypotheses to generate.                              | `3`                  |
 |                      | `target_diversity`    | Desired diversity score among generated hypotheses.                         | `0.4`                |
 |                      | `evidence_threshold`  | Minimum evidence level required for a hypothesis.                           | `"medium-high"`      |
 | **Domain Agent**     | `lambda`              | Weight for balancing prior and conditional probabilities in hypothesis scoring. | `0.7`                |
