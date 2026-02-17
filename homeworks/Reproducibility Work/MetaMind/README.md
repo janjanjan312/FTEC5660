@@ -27,19 +27,19 @@ unzip -o evaluations.zip -d evaluations
 python evaluations/tombench/eval_tombench.py --task "Ambiguous Story Task" --max_examples 30 --checkpoints "10,20,30"
 ```
 
-### Reproduction target (suggested)
+### Reproduction target
 
 - **Benchmark**: ToMBench
 - **Metric**: Accuracy
 - **Task**: `Ambiguous Story Task`
 - **Subset**: first 30 examples (with interim checkpoints at 10/20/30)
 
-### Controlled setup change (model swap)
+### Controlled setup change
 
 To make the pipeline runnable with accessible credentials, this reproduction uses **DeepSeek via Volcengine Ark** (OpenAI-compatible endpoint) instead of the original OpenAI defaults.  
 Because the underlying model differs, paper headline numbers (e.g., GPT-4 ToMBench average) are **not directly comparable** to these measurements.
 
-### Planned modification (single parameter)
+### Planned modification
 
 - **Parameter**: `TOM_AGENT_CONFIG["hypothesis_count"]`
 - **How to change**: set `TOM_HYPOTHESIS_COUNT` in `.env` or export it in your shell
@@ -52,7 +52,7 @@ TOM_HYPOTHESIS_COUNT=3 python evaluations/tombench/eval_tombench.py --task "Ambi
 TOM_HYPOTHESIS_COUNT=7 python evaluations/tombench/eval_tombench.py --task "Ambiguous Story Task" --max_examples 30 --checkpoints "10,20,30"
 ```
 
-### Measured results (this submission; scoped subset)
+### Measured results
 
 On `Ambiguous Story Task` (first 30 examples), with `LLM_TEMPERATURE=0` and `LLM_MAX_TOKENS=200`, we repeated runs to estimate variability:
 
